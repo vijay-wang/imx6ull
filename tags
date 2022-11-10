@@ -32433,7 +32433,7 @@ Software9_IRQn	imx6ull/MCIMX6Y2.h	/^  Software9_IRQn               = 9,         
 TACC	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TACC;                              \/**< Transmit Accelerator Function Configuration, offset: 0x1C0 *\/$/;"	m	struct:__anon15
 TAEM	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TAEM;                              \/**< Transmit FIFO Almost Empty Threshold, offset: 0x1A4 *\/$/;"	m	struct:__anon15
 TAFL	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TAFL;                              \/**< Transmit FIFO Almost Full Threshold, offset: 0x1A8 *\/$/;"	m	struct:__anon15
-TARGET	Makefile	/^TARGET		?= key0$/;"	m
+TARGET	Makefile	/^TARGET		?= clk$/;"	m
 TBDR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TBDR;                              \/**< TX Buffer Data Register, offset: 0x154 *\/$/;"	m	struct:__anon36
 TBSR	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t TBSR;                              \/**< TX Buffer Status Register, offset: 0x150 *\/$/;"	m	struct:__anon36
 TCCR	imx6ull/MCIMX6Y2.h	/^    __IO uint32_t TCCR;                              \/**< Timer Compare Capture Register, array offset: 0x60C, array step: 0x8 *\/$/;"	m	struct:__anon15::__anon16
@@ -36843,6 +36843,7 @@ eCSPI1_IRQn	imx6ull/MCIMX6Y2.h	/^  eCSPI1_IRQn                  = 63,           
 eCSPI2_IRQn	imx6ull/MCIMX6Y2.h	/^  eCSPI2_IRQn                  = 64,               \/**< eCSPI2 interrupt request. *\/$/;"	e	enum:IRQn
 eCSPI3_IRQn	imx6ull/MCIMX6Y2.h	/^  eCSPI3_IRQn                  = 65,               \/**< eCSPI3 interrupt request. *\/$/;"	e	enum:IRQn
 eCSPI4_IRQn	imx6ull/MCIMX6Y2.h	/^  eCSPI4_IRQn                  = 66,               \/**< eCSPI4 interrupt request. *\/$/;"	e	enum:IRQn
+imx6u_clkinit	bsp/clk/bsp_clk.c	/^void imx6u_clkinit(void)$/;"	f
 int16_t	imx6ull/cc.h	/^typedef   signed short     int int16_t;$/;"	t
 int32_t	imx6ull/cc.h	/^typedef   signed           int int32_t;$/;"	t
 int8_t	imx6ull/cc.h	/^typedef   signed          char int8_t;$/;"	t

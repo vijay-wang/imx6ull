@@ -7,6 +7,7 @@
 
 int main(void)
 {
+	imx6u_clkinit();
 	clk_enable();		/* 使能所有的时钟 			*/
 	led_init();		/* 初始化led 			*/
 	beep_init();		/* 初始化蜂鸣器 			*/
@@ -16,17 +17,21 @@ int main(void)
 
 	while(1)			/* 死循环 				*/
 	{	
-		delay(10);
-
-		int key_val = key0_getval();
-
-		if (key_val == KEY_DOWN) {
-			led_switch(ON);		/* 打开LED 			*/
-			beep_switch(ON);
-		} else if (key_val == KEY_UP) {
-			led_switch(OFF);		/* 关闭LED 			*/
-			beep_switch(OFF);
-		}
+		led_switch(ON);
+		delay(10000);
+		led_switch(OFF);
+		delay(10000);
+//		delay(10);
+//
+//		int key_val = key0_getval();
+//
+//		if (key_val == KEY_DOWN) {
+//			led_switch(ON);		/* 打开LED 			*/
+//			beep_switch(ON);
+//		} else if (key_val == KEY_UP) {
+//			led_switch(OFF);		/* 关闭LED 			*/
+//			beep_switch(OFF);
+//		}
 	}
 
 	return 0;

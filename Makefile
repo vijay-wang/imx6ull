@@ -4,7 +4,7 @@ ARM-OBJDUMP 	:= $(TOOLS)-objdump
 ARM-GCC 	:= $(TOOLS)-gcc
 ARM-LD 		:= $(TOOLS)-ld
 
-TARGET		?= key0
+TARGET		?= clk
 
 INCDIRS		:= imx6ull \
 			bsp/clk \
