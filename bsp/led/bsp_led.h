@@ -9,18 +9,6 @@
  */
 void led_init(void);
 
-/*
- * @description	: 打开LED灯
- * @param 		: 无
- * @return 		: 无
- */
-void led_on(void);
-
-/*
- * @description	: 关闭LED灯
- * @param 		: 无
- * @return 		: 无
- */
-void led_off(void);
+void led_switch(const int status);
 
 #endif

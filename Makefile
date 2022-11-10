@@ -1,22 +1,24 @@
 TOOLS 		:= arm-linux-gnueabihf
-ARM-OBJCOPY 		:= $(TOOLS)-objcopy
-ARM-OBJDUMP 		:= $(TOOLS)-objdump
-ARM-GCC 		:= $(TOOLS)-gcc
+ARM-OBJCOPY 	:= $(TOOLS)-objcopy
+ARM-OBJDUMP 	:= $(TOOLS)-objdump
+ARM-GCC 	:= $(TOOLS)-gcc
 ARM-LD 		:= $(TOOLS)-ld
 
-TARGET		?= beep
+TARGET		?= key0
 
 INCDIRS		:= imx6ull \
 			bsp/clk \
 			bsp/led \
 			bsp/delay \
-			bsp/beep
+			bsp/beep \
+			bsp/key0
 
 SRCDIRS 	:= project \
 			bsp/clk \
 			bsp/led \
 			bsp/delay \
-			bsp/beep
+			bsp/beep \
+			bsp/key0
 
 INCLUDE		:= $(patsubst %, -I %, $(INCDIRS))
 

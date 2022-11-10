@@ -26,7 +26,7 @@ void led_init(void)
 	GPIO1->GDIR |= (1 << 3);	
 	
 	/* 4、设置GPIO1_IO03输出低电平，打开LED0 */
-	GPIO1->DR &= ~(1 << 3);			
+	GPIO1->DR |= (1 << 3);			
 }
 
 /*
@@ -34,21 +34,12 @@ void led_init(void)
  * @param 		: 无
  * @return 		: 无
  */
-void led_on(void)
-{
-	/* 将GPIO1_DR的bit3清零 	*/
-	GPIO1->DR &= ~(1<<3); 
-}
 
-/*
- * @description	: 关闭LED灯
- * @param 		: 无
- * @return 		: 无
- */
-void led_off(void)
+void led_switch(const int status)
 {
-	/* 将GPIO1_DR的bit3置1 */
-	GPIO1->DR |= (1<<3); 
+	if (status == ON)
+		GPIO1->DR &= ~(1<<3); 
+	else if (status == OFF)
+		GPIO1->DR |= (1<<3); 
 }
-
 

@@ -2834,10 +2834,10 @@ APBH_VERSION_MINOR_SHIFT	imx6ull/MCIMX6Y2.h	4319;"	d
 APBH_VERSION_STEP	imx6ull/MCIMX6Y2.h	4317;"	d
 APBH_VERSION_STEP_MASK	imx6ull/MCIMX6Y2.h	4315;"	d
 APBH_VERSION_STEP_SHIFT	imx6ull/MCIMX6Y2.h	4316;"	d
-ARM-GCC	Makefile	/^ARM-GCC 		:= $(TOOLS)-gcc$/;"	m
+ARM-GCC	Makefile	/^ARM-GCC 	:= $(TOOLS)-gcc$/;"	m
 ARM-LD	Makefile	/^ARM-LD 		:= $(TOOLS)-ld$/;"	m
-ARM-OBJCOPY	Makefile	/^ARM-OBJCOPY 		:= $(TOOLS)-objcopy$/;"	m
-ARM-OBJDUMP	Makefile	/^ARM-OBJDUMP 		:= $(TOOLS)-objdump$/;"	m
+ARM-OBJCOPY	Makefile	/^ARM-OBJCOPY 	:= $(TOOLS)-objcopy$/;"	m
+ARM-OBJDUMP	Makefile	/^ARM-OBJDUMP 	:= $(TOOLS)-objdump$/;"	m
 ASR56K	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ASR56K;                            \/**< ASRC 56 kHz Period in terms of ASRC processing clock, offset: 0x9C *\/$/;"	m	struct:__anon5
 ASR76K	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ASR76K;                            \/**< ASRC 76 kHz Period in terms of ASRC processing clock, offset: 0x98 *\/$/;"	m	struct:__anon5
 ASRC	imx6ull/MCIMX6Y2.h	4910;"	d
@@ -13653,6 +13653,8 @@ ISR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ISR;                               \/**
 KDDR	imx6ull/MCIMX6Y2.h	/^  __IO uint16_t KDDR;                              \/**< Keypad Data Direction Register, offset: 0x4 *\/$/;"	m	struct:__anon28
 KEY	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t KEY;                               \/**< DCP key index, offset: 0x60 *\/$/;"	m	struct:__anon12
 KEYDATA	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t KEYDATA;                           \/**< DCP key data, offset: 0x70 *\/$/;"	m	struct:__anon12
+KEY_DOWN	bsp/key0/bsp_key0.h	/^	KEY_DOWN,$/;"	e	enum:key0
+KEY_UP	bsp/key0/bsp_key0.h	/^	KEY_UP$/;"	e	enum:key0
 KPCR	imx6ull/MCIMX6Y2.h	/^  __IO uint16_t KPCR;                              \/**< Keypad Control Register, offset: 0x0 *\/$/;"	m	struct:__anon28
 KPDR	imx6ull/MCIMX6Y2.h	/^  __IO uint16_t KPDR;                              \/**< Keypad Data Register, offset: 0x6 *\/$/;"	m	struct:__anon28
 KPP	imx6ull/MCIMX6Y2.h	16044;"	d
@@ -32431,7 +32433,7 @@ Software9_IRQn	imx6ull/MCIMX6Y2.h	/^  Software9_IRQn               = 9,         
 TACC	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TACC;                              \/**< Transmit Accelerator Function Configuration, offset: 0x1C0 *\/$/;"	m	struct:__anon15
 TAEM	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TAEM;                              \/**< Transmit FIFO Almost Empty Threshold, offset: 0x1A4 *\/$/;"	m	struct:__anon15
 TAFL	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TAFL;                              \/**< Transmit FIFO Almost Full Threshold, offset: 0x1A8 *\/$/;"	m	struct:__anon15
-TARGET	Makefile	/^TARGET		?= beep$/;"	m
+TARGET	Makefile	/^TARGET		?= key0$/;"	m
 TBDR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TBDR;                              \/**< TX Buffer Data Register, offset: 0x154 *\/$/;"	m	struct:__anon36
 TBSR	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t TBSR;                              \/**< TX Buffer Status Register, offset: 0x150 *\/$/;"	m	struct:__anon36
 TCCR	imx6ull/MCIMX6Y2.h	/^    __IO uint32_t TCCR;                              \/**< Timer Compare Capture Register, array offset: 0x60C, array step: 0x8 *\/$/;"	m	struct:__anon15::__anon16
@@ -36817,6 +36819,7 @@ __GIC_PRIO_BITS	imx6ull/MCIMX6Y2.h	213;"	d
 __I	imx6ull/cc.h	16;"	d
 __IMX6UL_H	imx6ull/imx6ul.h	2;"	d
 __IO	imx6ull/cc.h	18;"	d
+__KEY0_H	bsp/key0/bsp_key0.h	2;"	d
 __O	imx6ull/cc.h	17;"	d
 _bss_end	project/start.s	/^_bss_end:$/;"	l
 _bss_start	project/start.s	/^_bss_start:$/;"	l
@@ -36830,6 +36833,8 @@ _iomuxc_sw_pad_ctl_pad	imx6ull/MCIMX6Y2.h	/^typedef enum _iomuxc_sw_pad_ctl_pad$
 _iomuxc_sw_pad_ctl_pad_ddr	imx6ull/MCIMX6Y2.h	/^typedef enum _iomuxc_sw_pad_ctl_pad_ddr$/;"	g
 _start	project/start.s	/^_start:$/;"	l
 _status_groups	imx6ull/fsl_common.h	/^enum _status_groups$/;"	g
+beep_init	bsp/beep/bsp_beep.c	/^void beep_init(void)$/;"	f
+beep_switch	bsp/beep/bsp_beep.c	/^void beep_switch(int status)$/;"	f
 bss_loop	project/start.s	/^bss_loop:$/;"	l
 clk_enable	bsp/clk/bsp_clk.c	/^void clk_enable(void)$/;"	f
 delay	bsp/delay/bsp_delay.c	/^void delay(volatile unsigned int n)$/;"	f
@@ -37335,10 +37340,13 @@ kStatus_OutOfRange	imx6ull/fsl_common.h	/^    kStatus_OutOfRange = MAKE_STATUS(k
 kStatus_ReadOnly	imx6ull/fsl_common.h	/^    kStatus_ReadOnly = MAKE_STATUS(kStatusGroup_Generic, 2),$/;"	e	enum:_generic_status
 kStatus_Success	imx6ull/fsl_common.h	/^    kStatus_Success = MAKE_STATUS(kStatusGroup_Generic, 0),$/;"	e	enum:_generic_status
 kStatus_Timeout	imx6ull/fsl_common.h	/^    kStatus_Timeout = MAKE_STATUS(kStatusGroup_Generic, 5),$/;"	e	enum:_generic_status
+key0	bsp/key0/bsp_key0.h	/^enum key0 {$/;"	g
+key0_getval	bsp/key0/bsp_key0.c	/^const int key0_getval(void)$/;"	f
+key0_init	bsp/key0/bsp_key0.c	/^void key0_init(void)$/;"	f
 led_init	bsp/led/bsp_led.c	/^void led_init(void)$/;"	f
-led_off	bsp/led/bsp_led.c	/^void led_off(void)$/;"	f
-led_on	bsp/led/bsp_led.c	/^void led_on(void)$/;"	f
+led_switch	bsp/led/bsp_led.c	/^void led_switch(const int status)$/;"	f
 main	project/main.c	/^int main(void)$/;"	f
+read_key	bsp/key0/bsp_key0.c	/^const int read_key(void)$/;"	f
 s16	imx6ull/cc.h	/^typedef	  signed short 	  int  s16;$/;"	t
 s32	imx6ull/cc.h	/^typedef	  signed int 		   s32;$/;"	t
 s64	imx6ull/cc.h	/^typedef	  signed long long int s64;$/;"	t
