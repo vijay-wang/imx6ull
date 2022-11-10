@@ -1,25 +1,25 @@
-#include "main.h"
+#include "imx6ull.h"
 
 /*使能时钟*/
 void clk_enable(void)
 {
-	CCM_CCGR0 = 0xffffffff;
-	CCM_CCGR1 = 0xffffffff;
-	CCM_CCGR2 = 0xffffffff;
-	CCM_CCGR3 = 0xffffffff;
-	CCM_CCGR4 = 0xffffffff;
-	CCM_CCGR5 = 0xffffffff;
-	CCM_CCGR6 = 0xffffffff;
+	CCM->CCM_CCGR0 = 0xffffffff;
+	CCM->CCM_CCGR1 = 0xffffffff;
+	CCM->CCM_CCGR2 = 0xffffffff;
+	CCM->CCM_CCGR3 = 0xffffffff;
+	CCM->CCM_CCGR4 = 0xffffffff;
+	CCM->CCM_CCGR5 = 0xffffffff;
+	CCM->CCM_CCGR6 = 0xffffffff;
 }
 
 /*初始化LED*/
 void led_init(void)
 {
-	SW_MUX_CTL_PAD_GPIO1_IO03 = 0x00000005;
-	SW_PAD_CTL_PAD_GPIO1_IO03 = 0x000010b0;
+	IOMUXC_MUX->GPIO1_IO03 = 0x00000005;
+	IOMUXC_PAD->GPIO1_IO03 = 0x000010b0;
 
-	GPIO1_GDIR = 0X00000008;
-	GPIO1_DR = 0X00000000;
+	GPIOx[1]->GPIOx_GDIR = 0X00000008;
+	GPIOx[1]->GPIOx_DR = 0X00000000;
 }
 
 void delay_short(volatile unsigned int n)
@@ -36,12 +36,12 @@ void delay(volatile unsigned int n)
 
 void led_on(void)
 {
-	GPIO1_DR &= ~(1<<3);//bit3清零
+	GPIOx[1]->GPIOx_DR &= ~(1<<3);//bit3清零
 }
 
 void led_off(void)
 {
-	GPIO1_DR |= (1<<3);//bit3设置0
+	GPIOx[1]->GPIOx_DR |= (1<<3);//bit3设置0
 }
 
 int main(void)
@@ -54,9 +54,9 @@ int main(void)
 
 	while (1) {
 		led_on();
-		delay(500);	
+		delay(5000);	
 		led_off();
-		delay(500);
+		delay(5000);
 	}
 
 	return 0;
