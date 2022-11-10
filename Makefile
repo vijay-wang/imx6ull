@@ -5,29 +5,13 @@ ARM-GCC 	:= $(TOOLS)-gcc
 ARM-LD 		:= $(TOOLS)-ld
 GCC-STD		:= gnu99
 
+BSP-SUBDIRS	:= $(foreach dir, $(shell ls bsp), bsp/$(dir))
+
 TARGET		?= epit
 
-INCDIRS		:= imx6ull \
-			bsp/clk \
-			bsp/led \
-			bsp/delay \
-			bsp/beep \
-			bsp/key0 \
-			bsp/int \
-			bsp/exti \
-			bsp/gpio \
-			bsp/epit
-
-SRCDIRS 	:= project \
-			bsp/clk \
-			bsp/led \
-			bsp/delay \
-			bsp/beep \
-			bsp/key0 \
-			bsp/int \
-			bsp/exti \
-			bsp/gpio \
-			bsp/epit
+INCDIRS		:= imx6ull $(BSP-SUBDIRS) 
+			
+SRCDIRS 	:= project $(BSP-SUBDIRS) 
 
 
 INCLUDE		:= $(patsubst %, -I %, $(INCDIRS))
@@ -59,7 +43,5 @@ clean:
 	rm load.imx $(TARGET).bin $(TARGET).elf $(TARGET).dis obj/*
 
 print:
-	@echo $(COBJS)
-	@echo $(SOBJS)
-	@echo $(OBJS)
-	@echo $(TARGET)
+	@echo $(INCDIRS)
+	@echo $(SRCDIRS)
