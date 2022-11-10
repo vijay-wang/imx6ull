@@ -7,10 +7,11 @@
 #include "bsp_int.h"
 #include "bsp_exti.h"
 #include "bsp_gpio.h"
-extern int key0_state;
+#include "bsp_epit.h"
 
 int main(void)
 {
+
 	int_init();
 	imx6u_clkinit();
 	clk_enable();		/* 使能所有的时钟 			*/
@@ -18,11 +19,26 @@ int main(void)
 	beep_init();		/* 初始化蜂鸣器 			*/
 	key0_init();
 	exti_init();
+	epit_init();
 
+	start_epit(5);
+	delay(10000);
+	start_epit(5);
 
 
 	while(1)			/* 死循环 				*/
 	{	
+//		if (my_param.epit1_timer.epit1_is_timeout == EPIT1_TIMEOUT) {
+//			led_switch(ON);
+//			beep_switch(ON);
+//			delay(500);
+//		}
+
+//		if (key0_state == 1) {
+//				delay(500);
+//				beep_switch(OFF);
+//				led_switch(OFF);
+//		}
 //		led_switch(ON);
 //		delay(5000);
 //		led_switch(OFF);

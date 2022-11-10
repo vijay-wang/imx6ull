@@ -33,8 +33,8 @@ void gpio1_io18_irqhandler(unsigned int giccIar, void *param)
 		beep_switch(ON);
 		led_switch(ON);
 		delay(500);
-		beep_switch(OFF);
-		led_switch(OFF);
+                beep_switch(OFF);
+                led_switch(OFF);
 
 	}
 	gpio_clearintflags(GPIO1, 18);//处理完中断以后必须清理中断，不然中断会一直到来

@@ -5,7 +5,7 @@ ARM-GCC 	:= $(TOOLS)-gcc
 ARM-LD 		:= $(TOOLS)-ld
 GCC-STD		:= gnu99
 
-TARGET		?= int
+TARGET		?= epit
 
 INCDIRS		:= imx6ull \
 			bsp/clk \
@@ -15,7 +15,8 @@ INCDIRS		:= imx6ull \
 			bsp/key0 \
 			bsp/int \
 			bsp/exti \
-			bsp/gpio
+			bsp/gpio \
+			bsp/epit
 
 SRCDIRS 	:= project \
 			bsp/clk \
@@ -25,7 +26,9 @@ SRCDIRS 	:= project \
 			bsp/key0 \
 			bsp/int \
 			bsp/exti \
-			bsp/gpio
+			bsp/gpio \
+			bsp/epit
+
 
 INCLUDE		:= $(patsubst %, -I %, $(INCDIRS))
 

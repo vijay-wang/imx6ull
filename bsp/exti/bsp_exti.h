@@ -2,6 +2,8 @@
 #define __EXTI_H
 #include "imx6ul.h"
 #include "bsp_int.h"
+#include "bsp_epit.h"
+
 
 void exti_init(void);
 void gpio1_io18_irqhandler(unsigned int giccIar, void *param);
