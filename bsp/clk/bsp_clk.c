@@ -29,7 +29,7 @@ void imx6u_clkinit(void)
 		CCM->CCSR |= (1 << 2);	//选通step_clk
 	}
 	CCM_ANALOG->PLL_ARM = (1 << 13) | ((66 << 0) & 0x7f);//设置主频为792MHz
-	CCM->CACRR = 0;		//divid by 1
+	CCM->CACRR |= 0;		//divid by 1
 	CCM->CCSR &= ~(1 << 2);		//选通pll1
 
 	/*设置PLL2的pfd0-pfd3 output = 528*18/PFD_FRAC*/

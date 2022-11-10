@@ -3,22 +3,29 @@ ARM-OBJCOPY 	:= $(TOOLS)-objcopy
 ARM-OBJDUMP 	:= $(TOOLS)-objdump
 ARM-GCC 	:= $(TOOLS)-gcc
 ARM-LD 		:= $(TOOLS)-ld
+GCC-STD		:= gnu99
 
-TARGET		?= clk
+TARGET		?= int
 
 INCDIRS		:= imx6ull \
 			bsp/clk \
 			bsp/led \
 			bsp/delay \
 			bsp/beep \
-			bsp/key0
+			bsp/key0 \
+			bsp/int \
+			bsp/exti \
+			bsp/gpio
 
 SRCDIRS 	:= project \
 			bsp/clk \
 			bsp/led \
 			bsp/delay \
 			bsp/beep \
-			bsp/key0
+			bsp/key0 \
+			bsp/int \
+			bsp/exti \
+			bsp/gpio
 
 INCLUDE		:= $(patsubst %, -I %, $(INCDIRS))
 
@@ -40,7 +47,7 @@ $(TARGET).bin: $(OBJS)
 	$(ARM-OBJDUMP) -D -m arm $(TARGET).elf > $(TARGET).dis
 
 $(COBJS): obj/%.o: %.c
-	$(ARM-GCC) -Wall -nostdlib -c $(INCLUDE) -O2 $^ -o $@
+	$(ARM-GCC) -Wall -std=$(GCC-STD) -nostdlib -c $(INCLUDE) -O2 $^ -o $@
 
 $(SOBJS): obj/%.o: %.s
 	$(ARM-GCC) -Wall -nostdlib -c $(INCLUDE) -O2 $^ -o $@
