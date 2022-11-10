@@ -1,5 +1,7 @@
 #include "bsp_beep.h"
 
+int beep_state = OFF;
+
 void beep_init(void)
 {
 	IOMUXC_SetPinMux(IOMUXC_SNVS_SNVS_TAMPER1_GPIO5_IO01, 0);

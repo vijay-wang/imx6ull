@@ -8,6 +8,7 @@
 #include "bsp_exti.h"
 #include "bsp_gpio.h"
 #include "bsp_epit.h"
+#include "key_filter.h"
 
 int main(void)
 {
@@ -19,41 +20,11 @@ int main(void)
 	beep_init();		/* 初始化蜂鸣器 			*/
 	key0_init();
 	exti_init();
-	epit_init();
-
-	start_epit(5);
-	delay(10000);
-	start_epit(5);
-
+	//epit_init();
+	key_filter_init();
 
 	while(1)			/* 死循环 				*/
 	{	
-//		if (my_param.epit1_timer.epit1_is_timeout == EPIT1_TIMEOUT) {
-//			led_switch(ON);
-//			beep_switch(ON);
-//			delay(500);
-//		}
-
-//		if (key0_state == 1) {
-//				delay(500);
-//				beep_switch(OFF);
-//				led_switch(OFF);
-//		}
-//		led_switch(ON);
-//		delay(5000);
-//		led_switch(OFF);
-//		delay(5000);
-//		delay(10);
-//
-//		int key_val = key0_getval();
-//
-//		if (key_val == KEY_DOWN) {
-//			led_switch(ON);		/* 打开LED 			*/
-//			beep_switch(ON);
-//		} else if (key_val == KEY_UP) {
-//			led_switch(OFF);		/* 关闭LED 			*/
-//			beep_switch(OFF);
-//		}
 	}
 
 	return 0;

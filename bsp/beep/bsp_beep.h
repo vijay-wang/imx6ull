@@ -1,7 +1,9 @@
-#ifndef __BEEP_H
-#define __BEEP_H
+#ifndef __BSP_BEEP_H
+#define __BSP_BEEP_H
 
 #include "imx6ul.h"
+
+extern int beep_state;
 
 void beep_init(void);
 

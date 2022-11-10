@@ -12,14 +12,6 @@ void epit_init(void)
 
 	EPIT1->CR |= 0x0100000e;
 
-//	if (epit_mode == SET_AND_FORGET)
-//		EPIT1->CR |= 0x01c2000e;
-//	else if (epit_mode == FREE_RUNNING)
-//		EPIT1->CR |= 0x01c20006;
-//	else
-//		return;
-
-
 #if 0
 	/*Disable EPIT*/
 	EPIT1->CR &= ~(0x1 << 0);

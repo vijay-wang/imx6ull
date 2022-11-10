@@ -7,7 +7,7 @@ GCC-STD		:= gnu99
 
 BSP-SUBDIRS	:= $(foreach dir, $(shell ls bsp), bsp/$(dir))
 
-TARGET		?= epit
+TARGET		?= key_filter
 
 INCDIRS		:= imx6ull $(BSP-SUBDIRS) 
 			

@@ -1,5 +1,7 @@
 #include "bsp_led.h"
 
+int led_state = OFF;
+
 /*
  * @description	: 初始化LED对应的GPIO
  * @param 		: 无
