@@ -1,7 +1,17 @@
-led.bin: led.s
-	arm-linux-gnueabihf-gcc -g -c led.s -o led.o
-	arm-linux-gnueabihf-ld -Ttext 0x80000000 led.o -o led.elf
-	arm-linux-gnueabihf-objcopy -O binary -S -g led.elf led.bin
+objs = main.o start.o
+
+ledc.bin: ledc.lef
+	arm-linux-gnueabihf-objcopy -O binary -S -g $< $@ 
+	arm-linux-gnueabihf-objdump -D -m arm $^ > ledc.dis
+
+ledc.lef: $(objs)
+	arm-linux-gnueabihf-ld -Tledc.lds $^ -o $@ 
+
+%.o: %.c
+	arm-linux-gnueabihf-gcc -Wall -nostdlib -c -O2 $^ -o $@
+
+%.o: %.s
+	arm-linux-gnueabihf-gcc -Wall -nostdlib -c -O2 $^ -o $@
 
 clean:
-	rm led.bin load.imx  led.o led.elf
+	rm load.imx ledc.bin ledc.lef *.o *.dis
