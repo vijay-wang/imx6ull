@@ -4,17 +4,19 @@ ARM-OBJDUMP 		:= $(TOOLS)-objdump
 ARM-GCC 		:= $(TOOLS)-gcc
 ARM-LD 		:= $(TOOLS)-ld
 
-TARGET		?= ledc
+TARGET		?= beep
 
 INCDIRS		:= imx6ull \
 			bsp/clk \
 			bsp/led \
-			bsp/delay
+			bsp/delay \
+			bsp/beep
 
 SRCDIRS 	:= project \
 			bsp/clk \
 			bsp/led \
-			bsp/delay
+			bsp/delay \
+			bsp/beep
 
 INCLUDE		:= $(patsubst %, -I %, $(INCDIRS))
 
@@ -31,9 +33,9 @@ OBJS	 	:= $(COBJS) $(SOBJS)
 VPATH		:= $(SRCDIRS)
 
 $(TARGET).bin: $(OBJS)
-	$(ARM-LD) -Tledc.lds -o $(TARGET).elf $^
+	$(ARM-LD) -T$(TARGET).lds -o $(TARGET).elf $^
 	$(ARM-OBJCOPY) -O binary -S -g  $(TARGET).elf $@ 
-	$(ARM-OBJDUMP) -D -m arm $(TARGET).elf > ledc.dis
+	$(ARM-OBJDUMP) -D -m arm $(TARGET).elf > $(TARGET).dis
 
 $(COBJS): obj/%.o: %.c
 	$(ARM-GCC) -Wall -nostdlib -c $(INCLUDE) -O2 $^ -o $@
