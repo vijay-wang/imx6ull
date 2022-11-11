@@ -6,6 +6,7 @@
 #include "bsp_delay.h"
 #include "bsp_beep.h"
 #include "bsp_epit.h"
+#include "bsp_gpio.h"
 
 
 void key_filter_init(void);

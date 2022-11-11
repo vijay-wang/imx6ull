@@ -20,7 +20,7 @@ typedef enum {
 void epit_init(void);
 void enable_epit(void);
 void disable_epit(void);
-void start_epit(int sec);
+void start_epit(int val);
 void stop_epit(void);
 void epit1_out_irqhandler(unsigned int giccIar, void *param);
 

@@ -28,6 +28,6 @@ void exti_init(void)
 
 void gpio1_io18_irqhandler(unsigned int giccIar, void *param)
 {
-	start_epit(0.01);
+	start_epit(66000000/100);
 	gpio_clearintflags(GPIO1, 18);//处理完中断以后必须清理中断，不然中断会一直到来
 }

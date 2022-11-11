@@ -39,9 +39,13 @@ void led_init(void)
 
 void led_switch(const int status)
 {
-	if (status == ON)
+	if (status == ON) {
 		GPIO1->DR &= ~(1<<3); 
-	else if (status == OFF)
+		led_state = ON;
+	}
+	else {
 		GPIO1->DR |= (1<<3); 
+		led_state = OFF;
+	}
 }
 

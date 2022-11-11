@@ -80,9 +80,9 @@ void disable_epit(void)
 	EPIT1->CR &= ~(0x1);
 }
 
-void start_epit(int sec)
+void start_epit(int val)
 {
-	EPIT1->LR = (sec * 66000000);
+	EPIT1->LR = val;
 	enable_epit();
 }
 

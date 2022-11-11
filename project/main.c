@@ -18,7 +18,7 @@ int main(void)
 	clk_enable();		/* 使能所有的时钟 			*/
 	led_init();		/* 初始化led 			*/
 	beep_init();		/* 初始化蜂鸣器 			*/
-	key0_init();
+	//key0_init();
 	exti_init();
 	//epit_init();
 	key_filter_init();
