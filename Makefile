@@ -7,7 +7,9 @@ GCC-STD		:= gnu99
 
 BSP-SUBDIRS	:= $(foreach dir, $(shell ls bsp), bsp/$(dir))
 
-TARGET		?= key_filter
+TARGET		?=  $(shell git branch --show-current)
+
+$(shell mv *.lds $(TARGET).lds)
 
 INCDIRS		:= imx6ull $(BSP-SUBDIRS) 
 			
