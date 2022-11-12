@@ -23,11 +23,6 @@ void key_filter_irqhandler(unsigned int giccIar, void *param)
 	if (EPIT1->SR & 0x1) {
 		stop_epit();
 		if (gpio_pinread(GPIO1, 18) == 0) {
-			if (led_state == OFF)
-				led_switch(ON);
-			else
-				led_switch(OFF);
-
 			if (beep_state == OFF)
 				beep_switch(ON);
 			else

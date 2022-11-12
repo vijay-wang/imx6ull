@@ -16,6 +16,7 @@ int main(void)
 	int_init();
 	imx6u_clkinit();
 	clk_enable();		/* 使能所有的时钟 			*/
+	delay_init();
 	led_init();		/* 初始化led 			*/
 	beep_init();		/* 初始化蜂鸣器 			*/
 	//key0_init();
@@ -25,6 +26,11 @@ int main(void)
 
 	while(1)			/* 死循环 				*/
 	{	
+		mdelay(1000);
+		if (led_state == OFF)
+			led_switch(ON);
+		else
+			led_switch(OFF);
 	}
 
 	return 0;
