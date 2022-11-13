@@ -22,8 +22,8 @@ void uart_io_init(void)
         IOMUXC_SetPinMux(IOMUXC_UART1_TX_DATA_UART1_TX, 0);                                               
         IOMUXC_SetPinConfig(IOMUXC_UART1_TX_DATA_UART1_TX, 0x10b0);
 
-        IOMUXC_SetPinMux(IOMUXC_UART1_TX_DATA_UART1_RX, 0);                                               
-        IOMUXC_SetPinConfig(IOMUXC_UART1_TX_DATA_UART1_TX, 0x10b0);
+        IOMUXC_SetPinMux(IOMUXC_UART1_RX_DATA_UART1_RX, 0);
+        IOMUXC_SetPinConfig(IOMUXC_UART1_RX_DATA_UART1_RX, 0x10b0);
 }
 
 void putc(unsigned char c)
@@ -41,12 +41,9 @@ void puts(char *str)
 
 unsigned char getc(void)
 {
-	puts("begin=====");
 	while ((UART1->USR2 & 0x1) == 0);
-	puts("end=====");
 	return UART1->URXD;
 }
-
 void uart_init(void)
 {
 	uart_io_init();
@@ -79,5 +76,3 @@ void uart_init(void)
 
 	uart_enable(UART1);
 }
-
-

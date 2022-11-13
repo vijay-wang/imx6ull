@@ -32,11 +32,11 @@ int main(void)
 		puts("please input a character:");
 		ch = getc();
 		putc(ch);
-		puts("\n");
+		puts("\r\n");
 
 		puts("the character you have put is:");
 		putc(ch);
-		puts("\n");
+		puts("\r\n");
 	}
 
 	return 0;
