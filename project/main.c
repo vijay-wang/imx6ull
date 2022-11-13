@@ -10,10 +10,11 @@
 #include "bsp_epit.h"
 #include "key_filter.h"
 #include "bsp_uart.h"
+#include "stdio.h"
 
 int main(void)
 {
-	unsigned char ch;
+	int a,b;
 
 	int_init();
 	imx6u_clkinit();
@@ -29,14 +30,9 @@ int main(void)
 
 	while(1)			/* 死循环 				*/
 	{	
-		puts("please input a character:");
-		ch = getc();
-		putc(ch);
-		puts("\r\n");
-
-		puts("the character you have put is:");
-		putc(ch);
-		puts("\r\n");
+		printf("please enter two numbers that sepated by space:");
+		scanf("%d %d", &a, &b);
+		printf("\r\na + b = %d\r\n", a + b);
 	}
 
 	return 0;

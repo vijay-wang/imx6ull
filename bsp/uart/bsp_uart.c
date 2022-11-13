@@ -1,5 +1,9 @@
 #include "bsp_uart.h"
 
+void raise(int sig_nr)
+{
+}
+
 #if 0
 void uart_setbaudrate(UART_Type *base, unsigned int baudrate, unsigned int srcclock_hz)
 {
@@ -135,12 +139,14 @@ void putc(unsigned char c)
 	UART1->UTXD = c & 0xff;
 }
 
+#if 0
 void puts(char *str)
 {
 	char *p = str;
 	while(*p)
 		putc(*p++);
 }
+#endif
 
 unsigned char getc(void)
 {

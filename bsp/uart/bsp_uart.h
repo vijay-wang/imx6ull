@@ -11,5 +11,7 @@ void putc(unsigned char c);
 
 unsigned char getc(void);
 
-void puts(char *str);
+//void puts(char *str);
+void raise(int sig_nr);
+
 #endif

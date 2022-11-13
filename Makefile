@@ -11,11 +11,11 @@ TARGET		?=  $(shell git branch --show-current)
 
 $(shell mv *.lds $(TARGET).lds)
 
-INCDIRS		:= imx6ull stdio $(BSP-SUBDIRS) 
+INCDIRS		:= imx6ull stdio/include $(BSP-SUBDIRS) 
 			
-SRCDIRS 	:= project stdio $(BSP-SUBDIRS) 
+SRCDIRS 	:= project stdio/lib $(BSP-SUBDIRS) 
 
-LIBPATH	:= -lgcc -L /home/wang/tool-chain/lib/gcc/arm-linux-gnueabihf/4.9.4
+LIBPATH		:= -lgcc -L /home/wang/tool-chain/lib/gcc/arm-linux-gnueabihf/4.9.4
 
 INCLUDE		:= $(patsubst %, -I %, $(INCDIRS))
 
@@ -37,8 +37,7 @@ $(TARGET).bin: $(OBJS)
 	$(ARM-OBJDUMP) -D -m arm $(TARGET).elf > $(TARGET).dis
 
 $(COBJS): obj/%.o: %.c
-	$(ARM-GCC) -fno-builtin -Wall -std=$(GCC-STD) -nostdlib -c $(INCLUDE) -O2 $^ -o $@ $(LIBPATH)
-
+	$(ARM-GCC) -fno-builtin -Wa,-mimplicit-it=thumb -Wall -std=$(GCC-STD) -nostdlib -c $(INCLUDE) -O2 $^ -o $@ 
 $(SOBJS): obj/%.o: %.s
 	$(ARM-GCC) -fno-builtin -Wall -nostdlib -c $(INCLUDE) -O2 $^ -o $@
 
