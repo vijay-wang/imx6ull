@@ -28,6 +28,11 @@ void key_filter_irqhandler(unsigned int giccIar, void *param)
 			else
 				beep_switch(OFF);
 
+			if (led_state == OFF)
+				led_switch(ON);
+			else
+				led_switch(OFF);
+
 		}
 
 	}

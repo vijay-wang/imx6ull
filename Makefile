@@ -36,10 +36,10 @@ $(TARGET).bin: $(OBJS)
 	$(ARM-OBJDUMP) -D -m arm $(TARGET).elf > $(TARGET).dis
 
 $(COBJS): obj/%.o: %.c
-	$(ARM-GCC) -Wall -std=$(GCC-STD) -nostdlib -c $(INCLUDE) -O2 $^ -o $@
+	$(ARM-GCC) -fno-builtin -Wall -std=$(GCC-STD) -nostdlib -c $(INCLUDE) -O2 $^ -o $@
 
 $(SOBJS): obj/%.o: %.s
-	$(ARM-GCC) -Wall -nostdlib -c $(INCLUDE) -O2 $^ -o $@
+	$(ARM-GCC) -fno-builtin -Wall -nostdlib -c $(INCLUDE) -O2 $^ -o $@
 
 clean:
 	rm load.imx $(TARGET).bin $(TARGET).elf $(TARGET).dis obj/*

@@ -32669,7 +32669,7 @@ T	imx6ull/core_ca7.h	/^    uint32_t T:1;                        \/*!< bit:      
 TACC	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TACC;                              \/**< Transmit Accelerator Function Configuration, offset: 0x1C0 *\/$/;"	m	struct:__anon20
 TAEM	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TAEM;                              \/**< Transmit FIFO Almost Empty Threshold, offset: 0x1A4 *\/$/;"	m	struct:__anon20
 TAFL	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TAFL;                              \/**< Transmit FIFO Almost Full Threshold, offset: 0x1A8 *\/$/;"	m	struct:__anon20
-TARGET	Makefile	/^TARGET		?= key_filter$/;"	m
+TARGET	Makefile	/^TARGET		?=  $(shell git branch --show-current)$/;"	m
 TBDR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t TBDR;                              \/**< TX Buffer Data Register, offset: 0x154 *\/$/;"	m	struct:__anon41
 TBSR	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t TBSR;                              \/**< TX Buffer Status Register, offset: 0x150 *\/$/;"	m	struct:__anon41
 TCCR	imx6ull/MCIMX6Y2.h	/^    __IO uint32_t TCCR;                              \/**< Timer Compare Capture Register, array offset: 0x60C, array step: 0x8 *\/$/;"	m	struct:__anon20::__anon21
@@ -37064,6 +37064,7 @@ __BSP_CLK_H	bsp/clk/bsp_clk.h	2;"	d
 __BSP_DELAY_H	bsp/delay/bsp_delay.h	2;"	d
 __BSP_INT_H	bsp/int/bsp_int.h	2;"	d
 __BSP_LED_H	bsp/led/bsp_led.h	2;"	d
+__BSP_UART_H	bsp/uart/bsp_uart.h	2;"	d
 __BSP__EPIT_H	bsp/epit/bsp_epit.h	2;"	d
 __CA7_REV	imx6ull/MCIMX6Y2.h	212;"	d
 __CC_H	imx6ull/cc.h	2;"	d
@@ -37163,7 +37164,7 @@ b	imx6ull/core_ca7.h	/^  } b;                                   \/*!< Structure 
 b	imx6ull/core_ca7.h	/^  } b;                                   \/*!< Structure used for bit  access *\/$/;"	m	union:__anon73	typeref:struct:__anon73::__anon74
 b	imx6ull/core_ca7.h	/^  } b;                                   \/*!< Structure used for bit  access *\/$/;"	m	union:__anon75	typeref:struct:__anon75::__anon76
 beep_init	bsp/beep/bsp_beep.c	/^void beep_init(void)$/;"	f
-beep_state	bsp/beep/bsp_beep.h	/^int beep_state = OFF;$/;"	v
+beep_state	bsp/beep/bsp_beep.c	/^int beep_state = OFF;$/;"	v
 beep_switch	bsp/beep/bsp_beep.c	/^void beep_switch(int status)$/;"	f
 bss_loop	project/start.s	/^bss_loop:$/;"	l
 clk_enable	bsp/clk/bsp_clk.c	/^void clk_enable(void)$/;"	f
@@ -37171,6 +37172,7 @@ cp10	imx6ull/core_ca7.h	/^    uint32_t cp10:2;                     \/*!< bit:20.
 cp11	imx6ull/core_ca7.h	/^    uint32_t cp11:2;                     \/*!< bit:22..23  Access rights for coprocessor 11 *\/$/;"	m	struct:__anon69::__anon70
 default_irqhandler	bsp/int/bsp_int.c	/^void default_irqhandler(unsigned int giccIar, void *param)$/;"	f
 delay	bsp/delay/bsp_delay.c	/^void delay(volatile unsigned int n)$/;"	f
+delay_init	bsp/delay/bsp_delay.c	/^void delay_init(void)$/;"	f
 delay_short	bsp/delay/bsp_delay.c	/^void delay_short(volatile unsigned int n)$/;"	f
 direction	bsp/gpio/bsp_gpio.h	/^	gpio_pin_direction_t direction;$/;"	m	struct:__anon3
 disable_epit	bsp/epit/bsp_epit.c	/^void disable_epit(void)$/;"	f
@@ -37185,6 +37187,7 @@ epit1_out_irqhandler	bsp/epit/bsp_epit.c	/^void epit1_out_irqhandler(unsigned in
 epit1_timer_t	bsp/epit/bsp_epit.h	/^} epit1_timer_t;$/;"	t	typeref:struct:__anon4
 epit_init	bsp/epit/bsp_epit.c	/^void epit_init(void)$/;"	f
 exti_init	bsp/exti/bsp_exti.c	/^void exti_init(void)$/;"	f
+getc	bsp/uart/bsp_uart.c	/^unsigned char getc(void)$/;"	f
 gpio1_io18_irqhandler	bsp/exti/bsp_exti.c	/^void gpio1_io18_irqhandler(unsigned int giccIar, void *param)$/;"	f
 gpio_clearintflags	bsp/gpio/bsp_gpio.c	/^void gpio_clearintflags(GPIO_Type *base, unsigned int pin)$/;"	f
 gpio_enableint	bsp/gpio/bsp_gpio.c	/^void gpio_enableint(GPIO_Type *base, int pin)$/;"	f
@@ -37704,18 +37707,21 @@ key0_init	bsp/key0/bsp_key0.c	/^void key0_init(void)$/;"	f
 key_filter_init	bsp/key_filter/key_filter.c	/^void key_filter_init(void)$/;"	f
 key_filter_irqhandler	bsp/key_filter/key_filter.c	/^void key_filter_irqhandler(unsigned int giccIar, void *param)$/;"	f
 led_init	bsp/led/bsp_led.c	/^void led_init(void)$/;"	f
-led_state	bsp/led/bsp_led.h	/^int led_state = OFF;$/;"	v
+led_state	bsp/led/bsp_led.c	/^int led_state = OFF;$/;"	v
 led_switch	bsp/led/bsp_led.c	/^void led_switch(const int status)$/;"	f
 main	project/main.c	/^int main(void)$/;"	f
+mdelay	bsp/delay/bsp_delay.c	/^void mdelay(int msec)$/;"	f
 output_logic	bsp/gpio/bsp_gpio.h	/^	uint8_t output_logic;$/;"	m	struct:__anon3
 param	bsp/int/bsp_int.h	/^	void *param;		$/;"	m	struct:_sys_irq_handler
+putc	bsp/uart/bsp_uart.c	/^void putc(unsigned char c)$/;"	f
+puts	bsp/uart/bsp_uart.c	/^void puts(char *str)$/;"	f
 read_key	bsp/key0/bsp_key0.c	/^const int read_key(void)$/;"	f
 s16	imx6ull/cc.h	/^typedef	  signed short 	  int  s16;$/;"	t
 s32	imx6ull/cc.h	/^typedef	  signed int 		   s32;$/;"	t
 s64	imx6ull/cc.h	/^typedef	  signed long long int s64;$/;"	t
 s8	imx6ull/cc.h	/^typedef	  signed char  	 	   s8;		$/;"	t
 sec	bsp/epit/bsp_epit.h	/^	int sec;$/;"	m	struct:__anon4
-start_epit	bsp/epit/bsp_epit.c	/^void start_epit(int sec)$/;"	f
+start_epit	bsp/epit/bsp_epit.c	/^void start_epit(int val)$/;"	f
 status_t	imx6ull/fsl_common.h	/^typedef int32_t status_t;$/;"	t
 stop_epit	bsp/epit/bsp_epit.c	/^void stop_epit(void)$/;"	f
 sys_irq_handler	bsp/int/bsp_int.h	/^typedef void (*sys_irq_handler)(unsigned int giccIar, void *param);$/;"	t
@@ -37727,6 +37733,11 @@ u16	imx6ull/cc.h	/^typedef	unsigned short int     u16;$/;"	t
 u32	imx6ull/cc.h	/^typedef	unsigned int 		   u32;$/;"	t
 u64	imx6ull/cc.h	/^typedef	unsigned long long int u64;$/;"	t
 u8	imx6ull/cc.h	/^typedef	unsigned char 		   u8;$/;"	t
+uart_disable	bsp/uart/bsp_uart.c	/^void uart_disable(UART_Type *base)$/;"	f
+uart_enable	bsp/uart/bsp_uart.c	/^void uart_enable(UART_Type *base)$/;"	f
+uart_init	bsp/uart/bsp_uart.c	/^void uart_init(void)$/;"	f
+uart_io_init	bsp/uart/bsp_uart.c	/^void uart_io_init(void)$/;"	f
+udelay	bsp/delay/bsp_delay.c	/^void udelay(int usec)$/;"	f
 uint16_t	imx6ull/cc.h	/^typedef unsigned short     int uint16_t;$/;"	t
 uint32_t	imx6ull/cc.h	/^typedef unsigned           int uint32_t;$/;"	t
 uint64_t	imx6ull/cc.h	/^typedef unsigned long     long uint64_t;$/;"	t
