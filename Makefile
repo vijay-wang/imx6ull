@@ -11,9 +11,9 @@ TARGET		?=  $(shell git branch --show-current)
 
 $(shell mv *.lds $(TARGET).lds)
 
-INCDIRS		:= imx6ull $(BSP-SUBDIRS) 
+INCDIRS		:= imx6ull stdio $(BSP-SUBDIRS) 
 			
-SRCDIRS 	:= project $(BSP-SUBDIRS) 
+SRCDIRS 	:= project stdio $(BSP-SUBDIRS) 
 
 LIBPATH	:= -lgcc -L /home/wang/tool-chain/lib/gcc/arm-linux-gnueabihf/4.9.4
 
