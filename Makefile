@@ -15,6 +15,7 @@ INCDIRS		:= imx6ull $(BSP-SUBDIRS)
 			
 SRCDIRS 	:= project $(BSP-SUBDIRS) 
 
+LIBPATH	:= -lgcc -L /home/wang/tool-chain/lib/gcc/arm-linux-gnueabihf/4.9.4
 
 INCLUDE		:= $(patsubst %, -I %, $(INCDIRS))
 
@@ -31,12 +32,12 @@ OBJS	 	:= $(COBJS) $(SOBJS)
 VPATH		:= $(SRCDIRS)
 
 $(TARGET).bin: $(OBJS)
-	$(ARM-LD) -T$(TARGET).lds -o $(TARGET).elf $^
+	$(ARM-LD) -T$(TARGET).lds -o $(TARGET).elf $^ $(LIBPATH)
 	$(ARM-OBJCOPY) -O binary -S -g  $(TARGET).elf $@ 
 	$(ARM-OBJDUMP) -D -m arm $(TARGET).elf > $(TARGET).dis
 
 $(COBJS): obj/%.o: %.c
-	$(ARM-GCC) -fno-builtin -Wall -std=$(GCC-STD) -nostdlib -c $(INCLUDE) -O2 $^ -o $@
+	$(ARM-GCC) -fno-builtin -Wall -std=$(GCC-STD) -nostdlib -c $(INCLUDE) -O2 $^ -o $@ $(LIBPATH)
 
 $(SOBJS): obj/%.o: %.s
 	$(ARM-GCC) -fno-builtin -Wall -nostdlib -c $(INCLUDE) -O2 $^ -o $@
