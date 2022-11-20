@@ -238,6 +238,7 @@ ADC_R_CDATA_MASK	imx6ull/MCIMX6Y2.h	839;"	d
 ADC_R_CDATA_SHIFT	imx6ull/MCIMX6Y2.h	840;"	d
 ADC_R_COUNT	imx6ull/MCIMX6Y2.h	844;"	d
 ADC_Type	imx6ull/MCIMX6Y2.h	/^} ADC_Type;$/;"	t	typeref:struct:__anon6
+ADDCH	stdio/lib/vsprintf.c	32;"	d	file:
 ADMA_ERR_STATUS	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t ADMA_ERR_STATUS;                   \/**< ADMA Error Status Register, offset: 0x54 *\/$/;"	m	struct:__anon60
 ADMA_SYS_ADDR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ADMA_SYS_ADDR;                     \/**< ADMA System Address, offset: 0x58 *\/$/;"	m	struct:__anon60
 AFE	imx6ull/core_ca7.h	/^    uint32_t AFE:1;                      \/*!< bit:    29  Access flag enable *\/$/;"	m	struct:__anon65::__anon66
@@ -367,6 +368,7 @@ AIPSTZ_OPACR_OPAC7	imx6ull/MCIMX6Y2.h	1194;"	d
 AIPSTZ_OPACR_OPAC7_MASK	imx6ull/MCIMX6Y2.h	1192;"	d
 AIPSTZ_OPACR_OPAC7_SHIFT	imx6ull/MCIMX6Y2.h	1193;"	d
 AIPSTZ_Type	imx6ull/MCIMX6Y2.h	/^} AIPSTZ_Type;$/;"	t	typeref:struct:__anon8
+ALIGN	stdio/lib/lib1funcs.S	/^#define ALIGN		.align 4,0x90$/;"	d
 ALPHA_A_CTRL	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ALPHA_A_CTRL;                      \/**< PXP Alpha Engine A Control Register., offset: 0x290 *\/$/;"	m	struct:__anon40
 ALU_B_BUF_SIZE	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ALU_B_BUF_SIZE;                    \/**< This register defines the size of the buffer to be processed by the alu engine., offset: 0x28B0 *\/$/;"	m	struct:__anon40
 ALU_B_CONFIG	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ALU_B_CONFIG;                      \/**< This register defines the hw configuration options for the alu core., offset: 0x28E0 *\/$/;"	m	struct:__anon40
@@ -4613,6 +4615,7 @@ BCH_VERSION_TOG_STEP	imx6ull/MCIMX6Y2.h	6430;"	d
 BCH_VERSION_TOG_STEP_MASK	imx6ull/MCIMX6Y2.h	6428;"	d
 BCH_VERSION_TOG_STEP_SHIFT	imx6ull/MCIMX6Y2.h	6429;"	d
 BFGENCR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t BFGENCR;                           \/**< Buffer Generic Configuration Register, offset: 0x20 *\/$/;"	m	struct:__anon41
+BITS_PER_UNIT	stdio/include/gcclib.h	4;"	d
 BLK_ATT	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t BLK_ATT;                           \/**< Block Attributes, offset: 0x4 *\/$/;"	m	struct:__anon60
 BLOCKNAME	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t BLOCKNAME;                         \/**< Block Name Register, offset: 0x150 *\/$/;"	m	struct:__anon11
 BLOCKNAME_CLR	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t BLOCKNAME_CLR;                     \/**< Block Name Register, offset: 0x158 *\/$/;"	m	struct:__anon11
@@ -7399,6 +7402,19 @@ CPACR_cp10_Pos	imx6ull/core_ca7.h	289;"	d
 CPACR_cp11_Msk	imx6ull/core_ca7.h	287;"	d
 CPACR_cp11_Pos	imx6ull/core_ca7.h	286;"	d
 CPSR_Type	imx6ull/core_ca7.h	/^} CPSR_Type;$/;"	t	typeref:union:__anon63
+CPUID_CACHETYPE	stdio/include/system.h	46;"	d
+CPUID_ID	stdio/include/system.h	45;"	d
+CPUID_TCM	stdio/include/system.h	47;"	d
+CPUID_TLBTYPE	stdio/include/system.h	48;"	d
+CPU_ARCH_ARMv3	stdio/include/system.h	9;"	d
+CPU_ARCH_ARMv4	stdio/include/system.h	10;"	d
+CPU_ARCH_ARMv4T	stdio/include/system.h	11;"	d
+CPU_ARCH_ARMv5	stdio/include/system.h	12;"	d
+CPU_ARCH_ARMv5T	stdio/include/system.h	13;"	d
+CPU_ARCH_ARMv5TE	stdio/include/system.h	14;"	d
+CPU_ARCH_ARMv5TEJ	stdio/include/system.h	15;"	d
+CPU_ARCH_ARMv6	stdio/include/system.h	16;"	d
+CPU_ARCH_UNKNOWN	stdio/include/system.h	8;"	d
 CPU_CTI_Trigger_IRQn	imx6ull/MCIMX6Y2.h	/^  CPU_CTI_Trigger_IRQn         = 127,              \/**< CTI trigger outputs interrupt ~ipi_cti_irq_b. *\/$/;"	e	enum:IRQn
 CPU_CTRL	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t CPU_CTRL;                          \/**< PGC CPU Control Register, offset: 0x80 *\/$/;"	m	struct:__anon37
 CPU_PDNSCR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t CPU_PDNSCR;                        \/**< PGC CPU Pull Down Sequence Control Register, offset: 0x88 *\/$/;"	m	struct:__anon37
@@ -7413,6 +7429,29 @@ CRCR	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t CRCR;                              \/*
 CRC_ADDR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t CRC_ADDR;                          \/**< OTP Controller CRC Test Address, offset: 0x70 *\/$/;"	m	struct:__anon36
 CRC_STAT	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t CRC_STAT;                          \/**< CRC Status Register, offset: 0x1A0 *\/$/;"	m	struct:__anon34
 CRC_VALUE	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t CRC_VALUE;                         \/**< OTP Controller CRC Value Register, offset: 0x80 *\/$/;"	m	struct:__anon36
+CR_A	stdio/include/system.h	22;"	d
+CR_B	stdio/include/system.h	28;"	d
+CR_C	stdio/include/system.h	23;"	d
+CR_D	stdio/include/system.h	26;"	d
+CR_DT	stdio/include/system.h	37;"	d
+CR_F	stdio/include/system.h	31;"	d
+CR_FI	stdio/include/system.h	40;"	d
+CR_I	stdio/include/system.h	33;"	d
+CR_IT	stdio/include/system.h	38;"	d
+CR_L	stdio/include/system.h	27;"	d
+CR_L4	stdio/include/system.h	36;"	d
+CR_M	stdio/include/system.h	21;"	d
+CR_P	stdio/include/system.h	25;"	d
+CR_R	stdio/include/system.h	30;"	d
+CR_RR	stdio/include/system.h	35;"	d
+CR_S	stdio/include/system.h	29;"	d
+CR_ST	stdio/include/system.h	39;"	d
+CR_U	stdio/include/system.h	41;"	d
+CR_V	stdio/include/system.h	34;"	d
+CR_VE	stdio/include/system.h	43;"	d
+CR_W	stdio/include/system.h	24;"	d
+CR_XP	stdio/include/system.h	42;"	d
+CR_Z	stdio/include/system.h	32;"	d
 CS	imx6ull/MCIMX6Y2.h	/^    __IO uint32_t CS;                                \/**< Message Buffer 0 CS Register..Message Buffer 63 CS Register, array offset: 0x80, array step: 0x10 *\/$/;"	m	struct:__anon12::__anon13
 CS0GCR1	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t CS0GCR1;                           \/**< Chip Select n General Configuration Register 1, offset: 0x0 *\/$/;"	m	struct:__anon19
 CS0GCR2	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t CS0GCR2;                           \/**< Chip Select n General Configuration Register 2, offset: 0x4 *\/$/;"	m	struct:__anon19
@@ -8364,6 +8403,10 @@ DITHER_FINAL_LUT_DATA3_CLR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t DITHER_FINAL_LUT
 DITHER_FINAL_LUT_DATA3_SET	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t DITHER_FINAL_LUT_DATA3_SET;        \/**< Final stage lookup value Register, offset: 0x16B4 *\/$/;"	m	struct:__anon40
 DITHER_FINAL_LUT_DATA3_TOG	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t DITHER_FINAL_LUT_DATA3_TOG;        \/**< Final stage lookup value Register, offset: 0x16BC *\/$/;"	m	struct:__anon40
 DITHER_STORE_SIZE_CH0	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t DITHER_STORE_SIZE_CH0;             \/**< This register defines the control bits for the pxp store_engine sub-block., offset: 0xA00 *\/$/;"	m	struct:__anon40
+DIstruct	stdio/include/gcclib.h	/^  struct DIstruct {SItype high, low;};$/;"	s
+DIstruct	stdio/include/gcclib.h	/^  struct DIstruct {SItype low, high;};$/;"	s
+DItype	stdio/include/gcclib.h	/^typedef          int DItype     __attribute__ ((mode (DI)));$/;"	t
+DIunion	stdio/include/gcclib.h	/^} DIunion;$/;"	t	typeref:union:__anon78
 DLL_CTRL	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t DLL_CTRL;                          \/**< DLL (Delay Line) Control, offset: 0x60 *\/$/;"	m	struct:__anon60
 DLL_STATUS	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t DLL_STATUS;                        \/**< DLL Status, offset: 0x64 *\/$/;"	m	struct:__anon60
 DMAREG	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t DMAREG;                            \/**< DMA Control Register, offset: 0x14 *\/$/;"	m	struct:__anon18
@@ -10113,6 +10156,7 @@ ENET_TXIC_ICTT_MASK	imx6ull/MCIMX6Y2.h	12198;"	d
 ENET_TXIC_ICTT_SHIFT	imx6ull/MCIMX6Y2.h	12199;"	d
 ENET_Transmit_IRQS	imx6ull/MCIMX6Y2.h	12720;"	d
 ENET_Type	imx6ull/MCIMX6Y2.h	/^} ENET_Type;$/;"	t	typeref:struct:__anon20
+ENTRY	stdio/lib/lib1funcs.S	/^#define ENTRY(name) \\$/;"	d
 EPCOMPLETE	imx6ull/MCIMX6Y2.h	38793;"	d
 EPCR	imx6ull/MCIMX6Y2.h	38794;"	d
 EPCR0	imx6ull/MCIMX6Y2.h	38795;"	d
@@ -11974,6 +12018,13 @@ I2C_IFDR_IC	imx6ull/MCIMX6Y2.h	14857;"	d
 I2C_IFDR_IC_MASK	imx6ull/MCIMX6Y2.h	14855;"	d
 I2C_IFDR_IC_SHIFT	imx6ull/MCIMX6Y2.h	14856;"	d
 I2C_IRQS	imx6ull/MCIMX6Y2.h	14935;"	d
+I2C_STATUS_ADDRNAK	bsp/i2c/bsp_i2c.h	11;"	d
+I2C_STATUS_ARBITRATIONLOST	bsp/i2c/bsp_i2c.h	9;"	d
+I2C_STATUS_BUSY	bsp/i2c/bsp_i2c.h	6;"	d
+I2C_STATUS_IDLE	bsp/i2c/bsp_i2c.h	7;"	d
+I2C_STATUS_NAK	bsp/i2c/bsp_i2c.h	8;"	d
+I2C_STATUS_OK	bsp/i2c/bsp_i2c.h	5;"	d
+I2C_STATUS_TIMEOUT	bsp/i2c/bsp_i2c.h	10;"	d
 I2C_Type	imx6ull/MCIMX6Y2.h	/^} I2C_Type;$/;"	t	typeref:struct:__anon28
 I2DR	imx6ull/MCIMX6Y2.h	/^  __IO uint16_t I2DR;                              \/**< I2C Data I\/O Register, offset: 0x10 *\/$/;"	m	struct:__anon28
 I2S1	imx6ull/MCIMX6Y2.h	15287;"	d
@@ -12274,7 +12325,8 @@ IMASK1	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t IMASK1;                            \
 IMASK2	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t IMASK2;                            \/**< Interrupt Masks 2 Register, offset: 0x24 *\/$/;"	m	struct:__anon12
 IMR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t IMR;                               \/**< GPIO interrupt mask register, offset: 0x14 *\/$/;"	m	struct:__anon25
 IMR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t IMR[4];                            \/**< IRQ masking register 1..IRQ masking register 4, array offset: 0x8, array step: 0x4 *\/$/;"	m	struct:__anon24
-INCDIRS	Makefile	/^INCDIRS		:= imx6ull $(BSP-SUBDIRS) $/;"	m
+INBUFSIZE	stdio/lib/printf.c	10;"	d	file:
+INCDIRS	Makefile	/^INCDIRS		:= imx6ull stdio\/include $(BSP-SUBDIRS) $/;"	m
 INCLUDE	Makefile	/^INCLUDE		:= $(patsubst %, -I %, $(INCDIRS))$/;"	m
 INIT_MEM_CTRL	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t INIT_MEM_CTRL;                     \/**< Initialize memory buffer control Register, offset: 0x360 *\/$/;"	m	struct:__anon40
 INIT_MEM_CTRL_CLR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t INIT_MEM_CTRL_CLR;                 \/**< Initialize memory buffer control Register, offset: 0x368 *\/$/;"	m	struct:__anon40
@@ -12287,6 +12339,8 @@ INTR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t INTR;                              \/*
 INTREG	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t INTREG;                            \/**< Interrupt Control Register, offset: 0x10 *\/$/;"	m	struct:__anon18
 INTRMASK	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t INTRMASK;                          \/**< Channel ARM platform Interrupt Mask, offset: 0x2C *\/$/;"	m	struct:__anon44
 INT_EN	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t INT_EN;                            \/**< Interrupt Enable, offset: 0x40 *\/$/;"	m	struct:__anon51
+INT_MAX	stdio/include/kernel.h	1;"	d
+INT_MIN	stdio/include/kernel.h	2;"	d
 INT_SIGNAL_EN	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t INT_SIGNAL_EN;                     \/**< Interrupt Signal Enable, offset: 0x38 *\/$/;"	m	struct:__anon60
 INT_SIG_EN	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t INT_SIG_EN;                        \/**< Interrupt Signal Enable, offset: 0x50 *\/$/;"	m	struct:__anon51
 INT_STATUS	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t INT_STATUS;                        \/**< Interrupt Status, offset: 0x30 *\/$/;"	m	struct:__anon60
@@ -13812,6 +13866,8 @@ KEY	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t KEY;                               \/**
 KEYDATA	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t KEYDATA;                           \/**< DCP key data, offset: 0x70 *\/$/;"	m	struct:__anon17
 KEY_DOWN	bsp/key0/bsp_key0.h	/^	KEY_DOWN,$/;"	e	enum:key0
 KEY_UP	bsp/key0/bsp_key0.h	/^	KEY_UP$/;"	e	enum:key0
+KI2C_Read	bsp/i2c/bsp_i2c.h	/^	KI2C_Read$/;"	e	enum:i2c_transfer
+KI2C_Write	bsp/i2c/bsp_i2c.h	/^	KI2C_Write,$/;"	e	enum:i2c_transfer
 KPCR	imx6ull/MCIMX6Y2.h	/^  __IO uint16_t KPCR;                              \/**< Keypad Control Register, offset: 0x0 *\/$/;"	m	struct:__anon33
 KPDR	imx6ull/MCIMX6Y2.h	/^  __IO uint16_t KPDR;                              \/**< Keypad Data Register, offset: 0x6 *\/$/;"	m	struct:__anon33
 KPP	imx6ull/MCIMX6Y2.h	16044;"	d
@@ -13861,6 +13917,7 @@ KPSR	imx6ull/MCIMX6Y2.h	/^  __IO uint16_t KPSR;                              \/*
 L1PCTL	imx6ull/core_ca7.h	/^    uint32_t L1PCTL:2;                   \/*!< bit:13..14  L1 Data prefetch control *\/$/;"	m	struct:__anon67::__anon68
 L1RADIS	imx6ull/core_ca7.h	/^    uint32_t L1RADIS:1;                  \/*!< bit:    12  L1 Data Cache read-allocate mode disable *\/$/;"	m	struct:__anon67::__anon68
 L2RADIS	imx6ull/core_ca7.h	/^    uint32_t L2RADIS:1;                  \/*!< bit:    11  L2 Data Cache read-allocate mode disable *\/$/;"	m	struct:__anon67::__anon68
+LARGE	stdio/lib/vsprintf.c	154;"	d	file:
 LAYOUTSELECT	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LAYOUTSELECT;                      \/**< Hardware ECC Accelerator Layout Select Register, offset: 0x70 *\/$/;"	m	struct:__anon11
 LAYOUTSELECT_CLR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LAYOUTSELECT_CLR;                  \/**< Hardware ECC Accelerator Layout Select Register, offset: 0x78 *\/$/;"	m	struct:__anon11
 LAYOUTSELECT_SET	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LAYOUTSELECT_SET;                  \/**< Hardware ECC Accelerator Layout Select Register, offset: 0x74 *\/$/;"	m	struct:__anon11
@@ -15090,7 +15147,11 @@ LCDIF_VDCTRL4_SYNC_SIGNALS_ON	imx6ull/MCIMX6Y2.h	17144;"	d
 LCDIF_VDCTRL4_SYNC_SIGNALS_ON_MASK	imx6ull/MCIMX6Y2.h	17142;"	d
 LCDIF_VDCTRL4_SYNC_SIGNALS_ON_SHIFT	imx6ull/MCIMX6Y2.h	17143;"	d
 LCKCR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LCKCR;                             \/**< LUT Lock Configuration Register, offset: 0x304 *\/$/;"	m	struct:__anon41
+LEFT	stdio/lib/vsprintf.c	152;"	d	file:
+LIBPATH	Makefile	/^LIBPATH		:= -lgcc -L \/home\/wang\/tool-chain\/lib\/gcc\/arm-linux-gnueabihf\/4.9.4$/;"	m
 LOCK	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LOCK;                              \/**< Value of OTP Bank0 Word0 (Lock controls), offset: 0x400 *\/$/;"	m	struct:__anon36
+LONG_MAX	stdio/include/kernel.h	4;"	d
+LONG_MIN	stdio/include/kernel.h	5;"	d
 LOWPWR_CTRL	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LOWPWR_CTRL;                       \/**< Low Power Control Register, offset: 0x160 *\/$/;"	m	struct:__anon38
 LOWPWR_CTRL_CLR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LOWPWR_CTRL_CLR;                   \/**< Low Power Control Register, offset: 0x168 *\/$/;"	m	struct:__anon38
 LOWPWR_CTRL_SET	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LOWPWR_CTRL_SET;                   \/**< Low Power Control Register, offset: 0x164 *\/$/;"	m	struct:__anon38
@@ -15108,6 +15169,7 @@ LUT_ADDR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LUT_ADDR;                         
 LUT_CTRL	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LUT_CTRL;                          \/**< Lookup Table Control Register., offset: 0x240 *\/$/;"	m	struct:__anon40
 LUT_DATA	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LUT_DATA;                          \/**< Lookup Table Data Register., offset: 0x260 *\/$/;"	m	struct:__anon40
 LUT_EXTMEM	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t LUT_EXTMEM;                        \/**< Lookup Table External Memory Address Register., offset: 0x270 *\/$/;"	m	struct:__anon40
+Ldiv0	stdio/lib/lib1funcs.S	/^Ldiv0:$/;"	l
 LegacyFastInt_IRQn	imx6ull/MCIMX6Y2.h	/^  LegacyFastInt_IRQn           = 28,               \/**< Cortex-A7 Legacy nFIQ signal Interrupt *\/$/;"	e	enum:IRQn
 LegacyIRQ_IRQn	imx6ull/MCIMX6Y2.h	/^  LegacyIRQ_IRQn               = 31,               \/**< Cortex-A7 Legacy nIRQ Interrupt *\/$/;"	e	enum:IRQn
 M	imx6ull/core_ca7.h	/^    uint32_t M:1;                        \/*!< bit:     0  MMU enable *\/$/;"	m	struct:__anon65::__anon66
@@ -16206,6 +16268,7 @@ MRBR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t MRBR;                              \/*
 MSCR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t MSCR;                              \/**< MII Speed Control Register, offset: 0x44 *\/$/;"	m	struct:__anon20
 MSGDATA	imx6ull/MCIMX6Y2.h	/^  __O  uint32_t MSGDATA;                           \/**< Message Data Register, offset: 0x40 *\/$/;"	m	struct:__anon18
 N	imx6ull/core_ca7.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag *\/$/;"	m	struct:__anon63::__anon64
+NATIVE_INT	stdio/include/vsprintf.h	20;"	d
 NEXT	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t NEXT;                              \/**< Next Frame Pointer, offset: 0x400 *\/$/;"	m	struct:__anon40
 NEXT_BUF	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t NEXT_BUF;                          \/**< LCD Interface Next Buffer Address Register, offset: 0x50 *\/$/;"	m	struct:__anon34
 NEXT_EN	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t NEXT_EN;                           \/**< PXP NEXT Buffer Enable select Register, offset: 0x3B0 *\/$/;"	m	struct:__anon40
@@ -16213,6 +16276,7 @@ NEXT_EN_CLR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t NEXT_EN_CLR;                   
 NEXT_EN_SET	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t NEXT_EN_SET;                       \/**< PXP NEXT Buffer Enable select Register, offset: 0x3B4 *\/$/;"	m	struct:__anon40
 NEXT_EN_TOG	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t NEXT_EN_TOG;                       \/**< PXP NEXT Buffer Enable select Register, offset: 0x3BC *\/$/;"	m	struct:__anon40
 NMFI	imx6ull/core_ca7.h	/^    uint32_t NMFI:1;                     \/*!< bit:    27  Non-maskable FIQ (NMFI) support *\/$/;"	m	struct:__anon65::__anon66
+NULL	stdio/include/types.h	6;"	d
 NUMBER_OF_INT_VECTORS	imx6ull/MCIMX6Y2.h	36;"	d
 NXP_FLD2VAL	imx6ull/MCIMX6Y2.h	42073;"	d
 NXP_VAL2FLD	imx6ull/MCIMX6Y2.h	42066;"	d
@@ -16729,6 +16793,7 @@ OTPMK5	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t OTPMK5;                            \
 OTPMK6	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t OTPMK6;                            \/**< Value of OTP Bank2 Word6 (OTPMK Key), offset: 0x560 *\/$/;"	m	struct:__anon36
 OTPMK7	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t OTPMK7;                            \/**< Value of OTP Bank2 Word7 (OTPMK Key), offset: 0x570 *\/$/;"	m	struct:__anon36
 OUT	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t OUT;                               \/**< RNGB Output FIFO, offset: 0x14 *\/$/;"	m	struct:__anon42
+OUTBUFSIZE	stdio/lib/printf.c	9;"	d	file:
 OUT_AS_LRC	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t OUT_AS_LRC;                        \/**< Alpha Surface Lower Right Coordinate, offset: 0xA0 *\/$/;"	m	struct:__anon40
 OUT_AS_ULC	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t OUT_AS_ULC;                        \/**< Alpha Surface Upper Left Coordinate, offset: 0x90 *\/$/;"	m	struct:__anon40
 OUT_BUF	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t OUT_BUF;                           \/**< Output Frame Buffer Pointer, offset: 0x30 *\/$/;"	m	struct:__anon40
@@ -16840,6 +16905,7 @@ PLL_VIDEO_DENOM	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t PLL_VIDEO_DENOM;           
 PLL_VIDEO_NUM	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t PLL_VIDEO_NUM;                     \/**< Numerator of Video PLL Fractional Loop Divider Register, offset: 0xB0 *\/$/;"	m	struct:__anon15
 PLL_VIDEO_SET	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t PLL_VIDEO_SET;                     \/**< Analog Video PLL control Register, offset: 0xA4 *\/$/;"	m	struct:__anon15
 PLL_VIDEO_TOG	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t PLL_VIDEO_TOG;                     \/**< Analog Video PLL control Register, offset: 0xAC *\/$/;"	m	struct:__anon15
+PLUS	stdio/lib/vsprintf.c	150;"	d	file:
 PMU	imx6ull/MCIMX6Y2.h	19970;"	d
 PMU_BASE	imx6ull/MCIMX6Y2.h	19968;"	d
 PMU_BASE_ADDRS	imx6ull/MCIMX6Y2.h	19972;"	d
@@ -32028,11 +32094,15 @@ SFILES	Makefile	/^SFILES 		:= $(foreach dir, $(SRCDIRS), $(wildcard $(dir)\/*.s)
 SFILESNDIR	Makefile	/^SFILESNDIR	:= $(notdir $(SFILES))$/;"	m
 SIC	imx6ull/MCIMX6Y2.h	/^    __IO uint32_t SIC;                               \/**< InterruptClear Register, offset: 0x10 *\/$/;"	m	union:__anon47::__anon48
 SIE	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t SIE;                               \/**< InterruptEn Register, offset: 0xC *\/$/;"	m	struct:__anon47
+SIGN	stdio/lib/vsprintf.c	149;"	d	file:
 SIS	imx6ull/MCIMX6Y2.h	/^    __I  uint32_t SIS;                               \/**< InterruptStat Register, offset: 0x10 *\/$/;"	m	union:__anon47::__anon48
 SISR	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t SISR;                              \/**< SRC Interrupt Status Register, offset: 0x14 *\/$/;"	m	struct:__anon49
+SI_TYPE_SIZE	stdio/include/gcclib.h	5;"	d
+SItype	stdio/include/gcclib.h	/^typedef          int SItype     __attribute__ ((mode (SI)));$/;"	t
 SJC_IRQn	imx6ull/MCIMX6Y2.h	/^  SJC_IRQn                     = 136,              \/**< SJC interrupt from General Purpose register. *\/$/;"	e	enum:IRQn
 SJC_RESP0	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t SJC_RESP0;                         \/**< Value of OTP Bank4 Word0 (Secure JTAG Response Field), offset: 0x600 *\/$/;"	m	struct:__anon36
 SJC_RESP1	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t SJC_RESP1;                         \/**< Value of OTP Bank4 Word1 (Secure JTAG Response Field), offset: 0x610 *\/$/;"	m	struct:__anon36
+SMALL	stdio/lib/vsprintf.c	156;"	d	file:
 SMP	imx6ull/core_ca7.h	/^    uint32_t SMP:1;                      \/*!< bit:     6  Enables coherent requests to the processor *\/$/;"	m	struct:__anon67::__anon68
 SMPR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t SMPR;                              \/**< Sampling Register, offset: 0x108 *\/$/;"	m	struct:__anon41
 SNVS	imx6ull/MCIMX6Y2.h	36528;"	d
@@ -32179,6 +32249,7 @@ SNVS_SECURITY_IRQS	imx6ull/MCIMX6Y2.h	36536;"	d
 SNVS_Security_IRQn	imx6ull/MCIMX6Y2.h	/^  SNVS_Security_IRQn           = 52,               \/**< SNVS security interrupt. *\/$/;"	e	enum:IRQn
 SNVS_Type	imx6ull/MCIMX6Y2.h	/^} SNVS_Type;$/;"	t	typeref:struct:__anon45
 SOBJS	Makefile	/^SOBJS		:= $(patsubst %, obj\/%, $(SFILESNDIR:.s=.o))$/;"	m
+SPACE	stdio/lib/vsprintf.c	151;"	d	file:
 SPBA	imx6ull/MCIMX6Y2.h	36596;"	d
 SPBA_BASE	imx6ull/MCIMX6Y2.h	36594;"	d
 SPBA_BASE_ADDRS	imx6ull/MCIMX6Y2.h	36598;"	d
@@ -32459,6 +32530,7 @@ SPDIF_STR_TXDATARIGHT	imx6ull/MCIMX6Y2.h	36908;"	d
 SPDIF_STR_TXDATARIGHT_MASK	imx6ull/MCIMX6Y2.h	36906;"	d
 SPDIF_STR_TXDATARIGHT_SHIFT	imx6ull/MCIMX6Y2.h	36907;"	d
 SPDIF_Type	imx6ull/MCIMX6Y2.h	/^} SPDIF_Type;$/;"	t	typeref:struct:__anon47
+SPECIAL	stdio/lib/vsprintf.c	153;"	d	file:
 SPNDST	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t SPNDST;                            \/**< Sequence Suspend Status Register, offset: 0x168 *\/$/;"	m	struct:__anon41
 SPTRCLR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t SPTRCLR;                           \/**< Sequence Pointer Clear Register, offset: 0x16C *\/$/;"	m	struct:__anon41
 SR	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t SR;                                \/**< RNGB status register, offset: 0xC *\/$/;"	m	struct:__anon42
@@ -32467,7 +32539,7 @@ SR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t SR;                                \/**<
 SR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t SR;                                \/**< Status register, offset: 0x4 *\/$/;"	m	struct:__anon22
 SRC	imx6ull/MCIMX6Y2.h	37110;"	d
 SRCD	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t SRCD;                              \/**< CDText Control Register, offset: 0x4 *\/$/;"	m	struct:__anon47
-SRCDIRS	Makefile	/^SRCDIRS 	:= project $(BSP-SUBDIRS) $/;"	m
+SRCDIRS	Makefile	/^SRCDIRS 	:= project stdio\/lib $(BSP-SUBDIRS) $/;"	m
 SRCSH	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t SRCSH;                             \/**< SPDIFRxCChannel_h Register, offset: 0x1C *\/$/;"	m	struct:__anon47
 SRCSL	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t SRCSL;                             \/**< SPDIFRxCChannel_l Register, offset: 0x20 *\/$/;"	m	struct:__anon47
 SRC_BASE	imx6ull/MCIMX6Y2.h	37108;"	d
@@ -33385,9 +33457,18 @@ UCR1	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t UCR1;                              \/*
 UCR2	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t UCR2;                              \/**< UART Control Register 2, offset: 0x84 *\/$/;"	m	struct:__anon52
 UCR3	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t UCR3;                              \/**< UART Control Register 3, offset: 0x88 *\/$/;"	m	struct:__anon52
 UCR4	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t UCR4;                              \/**< UART Control Register 4, offset: 0x8C *\/$/;"	m	struct:__anon52
+UDBG_BADABORT	stdio/include/system.h	124;"	d
+UDBG_BUS	stdio/include/system.h	126;"	d
+UDBG_SEGV	stdio/include/system.h	125;"	d
+UDBG_SYSCALL	stdio/include/system.h	123;"	d
+UDBG_UNDEFINED	stdio/include/system.h	122;"	d
+UDItype	stdio/include/gcclib.h	/^typedef unsigned int UDItype    __attribute__ ((mode (DI)));$/;"	t
 UESC	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t UESC;                              \/**< UART Escape Character Register, offset: 0x9C *\/$/;"	m	struct:__anon52
 UFCR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t UFCR;                              \/**< UART FIFO Control Register, offset: 0x90 *\/$/;"	m	struct:__anon52
+UINT_MAX	stdio/include/kernel.h	3;"	d
+ULONG_MAX	stdio/include/kernel.h	6;"	d
 UMCR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t UMCR;                              \/**< UART RS-485 Mode Control Register, offset: 0xB8 *\/$/;"	m	struct:__anon52
+UQItype	stdio/include/gcclib.h	/^typedef unsigned int UQItype    __attribute__ ((mode (QI)));$/;"	t
 URXD	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t URXD;                              \/**< UART Receiver Register, offset: 0x0 *\/$/;"	m	struct:__anon52
 USB1	imx6ull/MCIMX6Y2.h	38773;"	d
 USB1_BASE	imx6ull/MCIMX6Y2.h	38771;"	d
@@ -36401,6 +36482,7 @@ USDHC_WTMK_LVL_WR_BRST_LEN_SHIFT	imx6ull/MCIMX6Y2.h	41329;"	d
 USDHC_WTMK_LVL_WR_WML	imx6ull/MCIMX6Y2.h	41327;"	d
 USDHC_WTMK_LVL_WR_WML_MASK	imx6ull/MCIMX6Y2.h	41325;"	d
 USDHC_WTMK_LVL_WR_WML_SHIFT	imx6ull/MCIMX6Y2.h	41326;"	d
+USItype	stdio/include/gcclib.h	/^typedef unsigned int USItype    __attribute__ ((mode (SI)));$/;"	t
 USR1	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t USR1;                              \/**< UART Status Register 1, offset: 0x94 *\/$/;"	m	struct:__anon52
 USR2	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t USR2;                              \/**< UART Status Register 2, offset: 0x98 *\/$/;"	m	struct:__anon52
 UTIM	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t UTIM;                              \/**< UART Escape Timer Register, offset: 0xA0 *\/$/;"	m	struct:__anon52
@@ -37053,17 +37135,38 @@ XTRIG_CONF1	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t XTRIG_CONF1;                   
 XTRIG_CONF2	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t XTRIG_CONF2;                       \/**< Cross-Trigger Events Configuration Register 2, offset: 0x74 *\/$/;"	m	struct:__anon44
 Z	imx6ull/core_ca7.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag *\/$/;"	m	struct:__anon63::__anon64
 Z	imx6ull/core_ca7.h	/^    uint32_t Z:1;                        \/*!< bit:    11  Branch prediction enable *\/$/;"	m	struct:__anon65::__anon66
+ZEROPAD	stdio/lib/vsprintf.c	148;"	d	file:
+_ADNBND	stdio/include/vsprintf.h	22;"	d
+_AUPBND	stdio/include/vsprintf.h	21;"	d
+_C	stdio/include/ctype.h	9;"	d
+_D	stdio/include/ctype.h	8;"	d
 _FLD2VAL	imx6ull/core_ca7.h	388;"	d
 _FSL_COMMON_H_	imx6ull/fsl_common.h	13;"	d
 _FSL_IOMUXC_H_	imx6ull/fsl_iomuxc.h	13;"	d
+_L	stdio/include/ctype.h	7;"	d
 _MCIMX6Y2_H_	imx6ull/MCIMX6Y2.h	14;"	d
+_P	stdio/include/ctype.h	10;"	d
+_PRINTF_H	stdio/include/printf.h	3;"	d
+_S	stdio/include/ctype.h	11;"	d
+_SIZE_T	stdio/include/types.h	10;"	d
+_SP	stdio/include/ctype.h	13;"	d
+_STDIO_H	stdio/include/stdio.h	3;"	d
+_TPYES_H	stdio/include/types.h	3;"	d
+_U	stdio/include/ctype.h	6;"	d
 _VAL2FLD	imx6ull/core_ca7.h	385;"	d
+_VALIST	stdio/include/stdio.h	8;"	d
+_VALIST	stdio/include/vsprintf.h	13;"	d
+_X	stdio/include/ctype.h	12;"	d
 __ASM	imx6ull/core_ca7.h	19;"	d
+__ASM_ARM_DIV64	stdio/include/div64.h	2;"	d
+__ASM_ARM_SYSTEM_H	stdio/include/system.h	2;"	d
 __BSP_BEEP_H	bsp/beep/bsp_beep.h	2;"	d
 __BSP_CLK_H	bsp/clk/bsp_clk.h	2;"	d
 __BSP_DELAY_H	bsp/delay/bsp_delay.h	2;"	d
+__BSP_I2C_H	bsp/i2c/bsp_i2c.h	2;"	d
 __BSP_INT_H	bsp/int/bsp_int.h	2;"	d
 __BSP_LED_H	bsp/led/bsp_led.h	2;"	d
+__BSP_PIN_CONFIG_H	bsp/pin_config/bsp_pin_config.h	2;"	d
 __BSP_UART_H	bsp/uart/bsp_uart.h	2;"	d
 __BSP__EPIT_H	bsp/epit/bsp_epit.h	2;"	d
 __CA7_REV	imx6ull/MCIMX6Y2.h	212;"	d
@@ -37081,12 +37184,16 @@ __IO	imx6ull/cc.h	18;"	d
 __IOM	imx6ull/core_ca7.h	26;"	d
 __KEY0_H	bsp/key0/bsp_key0.h	2;"	d
 __KEY_FILTER_H	bsp/key_filter/key_filter.h	2;"	d
+__LINUX_ARM_ARCH__	stdio/lib/lib1funcs.S	/^#define __LINUX_ARM_ARCH__  1$/;"	d
 __MCR	imx6ull/core_ca7.h	30;"	d
 __MRC	imx6ull/core_ca7.h	37;"	d
 __O	imx6ull/cc.h	17;"	d
 __OM	imx6ull/core_ca7.h	25;"	d
 __STATIC_INLINE	imx6ull/core_ca7.h	21;"	d
 __STRINGIFY	imx6ull/core_ca7.h	27;"	d
+___strtok	stdio/lib/string.c	/^char * ___strtok;$/;"	v
+__asmeq	stdio/include/system.h	68;"	d
+__div64_32	stdio/lib/div64.c	/^unsigned int  __div64_32(unsigned long long *n, unsigned int base)$/;"	f
 __get_ACTLR	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE uint32_t __get_ACTLR(void)$/;"	f
 __get_CBAR	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE uint32_t __get_CBAR(void)$/;"	f
 __get_CONTEXTIDR	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE uint32_t __get_CONTEXTIDR(void)$/;"	f
@@ -37104,6 +37211,8 @@ __get_TTBCR	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE uint32_t __get_TTB
 __get_TTBR0	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE uint32_t __get_TTBR0(void)$/;"	f
 __get_TTBR1	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE uint32_t __get_TTBR1(void)$/;"	f
 __get_VBAR	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE uint32_t __get_VBAR(void)$/;"	f
+__ismask	stdio/include/ctype.h	17;"	d
+__muldi3	stdio/lib/muldi3.c	/^__muldi3 (DItype u, DItype v)$/;"	f
 __set_ACTLR	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE void __set_ACTLR(uint32_t actlr)$/;"	f
 __set_APSR	imx6ull/core_ca7.h	/^__attribute__( ( always_inline ) ) __STATIC_INLINE void __set_APSR(uint32_t apsr)$/;"	f
 __set_CONTEXTIDR	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE void __set_CONTEXTIDR(uint32_t contextidr)$/;"	f
@@ -37121,8 +37230,14 @@ __set_TTBCR	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE void __set_TTBCR(u
 __set_TTBR0	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE void __set_TTBR0(uint32_t ttbr0)$/;"	f
 __set_TTBR1	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE void __set_TTBR1(uint32_t ttbr1)$/;"	f
 __set_VBAR	imx6ull/core_ca7.h	/^FORCEDINLINE __STATIC_INLINE void __set_VBAR(uint32_t vbar)$/;"	f
+__tolower	stdio/include/ctype.h	/^static inline unsigned char __tolower(unsigned char c)$/;"	f
+__toupper	stdio/include/ctype.h	/^static inline unsigned char __toupper(unsigned char c)$/;"	f
+__umulsidi3	stdio/lib/muldi3.c	56;"	d	file:
+__xchg	stdio/include/system.h	/^static inline unsigned long __xchg(unsigned long x, volatile void *ptr, int size)$/;"	f
+_bnd	stdio/include/vsprintf.h	28;"	d
 _bss_end	project/start.s	/^_bss_end:$/;"	l
 _bss_start	project/start.s	/^_bss_start:$/;"	l
+_ctype	stdio/lib/ctype.c	/^unsigned char _ctype[] = {$/;"	v
 _generic_status	imx6ull/fsl_common.h	/^enum _generic_status$/;"	g
 _iomuxc_grp	imx6ull/MCIMX6Y2.h	/^typedef enum _iomuxc_grp$/;"	g
 _iomuxc_select_input	imx6ull/MCIMX6Y2.h	/^typedef enum _iomuxc_select_input$/;"	g
@@ -37163,6 +37278,7 @@ b	imx6ull/core_ca7.h	/^  } b;                                   \/*!< Structure 
 b	imx6ull/core_ca7.h	/^  } b;                                   \/*!< Structure used for bit  access *\/$/;"	m	union:__anon71	typeref:struct:__anon71::__anon72
 b	imx6ull/core_ca7.h	/^  } b;                                   \/*!< Structure used for bit  access *\/$/;"	m	union:__anon73	typeref:struct:__anon73::__anon74
 b	imx6ull/core_ca7.h	/^  } b;                                   \/*!< Structure used for bit  access *\/$/;"	m	union:__anon75	typeref:struct:__anon75::__anon76
+bcopy	stdio/lib/string.c	/^void bcopy(const void *src, void *dest, size_t count)$/;"	f
 beep_init	bsp/beep/bsp_beep.c	/^void beep_init(void)$/;"	f
 beep_state	bsp/beep/bsp_beep.c	/^int beep_state = OFF;$/;"	v
 beep_switch	bsp/beep/bsp_beep.c	/^void beep_switch(int status)$/;"	f
@@ -37176,6 +37292,7 @@ delay_init	bsp/delay/bsp_delay.c	/^void delay_init(void)$/;"	f
 delay_short	bsp/delay/bsp_delay.c	/^void delay_short(volatile unsigned int n)$/;"	f
 direction	bsp/gpio/bsp_gpio.h	/^	gpio_pin_direction_t direction;$/;"	m	struct:__anon3
 disable_epit	bsp/epit/bsp_epit.c	/^void disable_epit(void)$/;"	f
+do_div	stdio/include/div64.h	22;"	d
 eCSPI1_IRQn	imx6ull/MCIMX6Y2.h	/^  eCSPI1_IRQn                  = 63,               \/**< eCSPI1 interrupt request. *\/$/;"	e	enum:IRQn
 eCSPI2_IRQn	imx6ull/MCIMX6Y2.h	/^  eCSPI2_IRQn                  = 64,               \/**< eCSPI2 interrupt request. *\/$/;"	e	enum:IRQn
 eCSPI3_IRQn	imx6ull/MCIMX6Y2.h	/^  eCSPI3_IRQn                  = 65,               \/**< eCSPI3 interrupt request. *\/$/;"	e	enum:IRQn
@@ -37187,6 +37304,11 @@ epit1_out_irqhandler	bsp/epit/bsp_epit.c	/^void epit1_out_irqhandler(unsigned in
 epit1_timer_t	bsp/epit/bsp_epit.h	/^} epit1_timer_t;$/;"	t	typeref:struct:__anon4
 epit_init	bsp/epit/bsp_epit.c	/^void epit_init(void)$/;"	f
 exti_init	bsp/exti/bsp_exti.c	/^void exti_init(void)$/;"	f
+finish_arch_switch	stdio/include/system.h	157;"	d
+finish_arch_switch	stdio/include/system.h	169;"	d
+g_pcInBuf	stdio/lib/printf.c	/^static char g_pcInBuf[INBUFSIZE];$/;"	v	file:
+g_pcOutBuf	stdio/lib/printf.c	/^static char g_pcOutBuf[OUTBUFSIZE];$/;"	v	file:
+get_cr	stdio/include/system.h	110;"	d
 getc	bsp/uart/bsp_uart.c	/^unsigned char getc(void)$/;"	f
 gpio1_io18_irqhandler	bsp/exti/bsp_exti.c	/^void gpio1_io18_irqhandler(unsigned int giccIar, void *param)$/;"	f
 gpio_clearintflags	bsp/gpio/bsp_gpio.c	/^void gpio_clearintflags(GPIO_Type *base, unsigned int pin)$/;"	f
@@ -37198,6 +37320,12 @@ gpio_pin_config_t	bsp/gpio/bsp_gpio.h	/^} gpio_pin_config_t;$/;"	t	typeref:struc
 gpio_pin_direction_t	bsp/gpio/bsp_gpio.h	/^} gpio_pin_direction_t;$/;"	t	typeref:enum:__anon1
 gpio_pinread	bsp/gpio/bsp_gpio.c	/^int gpio_pinread(GPIO_Type *base, int pin)$/;"	f
 gpio_pinwrite	bsp/gpio/bsp_gpio.c	/^void gpio_pinwrite(GPIO_Type *base, int pin, int val)$/;"	f
+high	stdio/include/gcclib.h	/^  struct DIstruct {SItype high, low;};$/;"	m	struct:DIstruct
+high	stdio/include/gcclib.h	/^  struct DIstruct {SItype low, high;};$/;"	m	struct:DIstruct
+i2c_init	bsp/i2c/bsp_i2c.c	/^void i2c_init(I2C_Type *base)$/;"	f
+i2c_master_start	bsp/i2c/bsp_i2c.c	/^unsigned char i2c_master_start(I2C_Type *base, unsigned char addr, enum i2c_transfer direction)$/;"	f
+i2c_master_stop	bsp/i2c/bsp_i2c.c	/^unsigned char i2c_master_stop(I2C_Type *base)$/;"	f
+i2c_transfer	bsp/i2c/bsp_i2c.h	/^enum i2c_transfer {$/;"	g
 imx6u_clkinit	bsp/clk/bsp_clk.c	/^void imx6u_clkinit(void)$/;"	f
 int16_t	imx6ull/cc.h	/^typedef   signed short     int int16_t;$/;"	t
 int32_t	imx6ull/cc.h	/^typedef   signed           int int32_t;$/;"	t
@@ -37214,6 +37342,19 @@ iomuxc_sw_pad_ctl_pad_t	imx6ull/MCIMX6Y2.h	/^} iomuxc_sw_pad_ctl_pad_t;$/;"	t	ty
 irq_hdl	bsp/int/bsp_int.h	/^	sys_irq_handler irq_hdl;$/;"	m	struct:_sys_irq_handler
 irq_nesting	bsp/int/bsp_int.c	/^static unsigned int irq_nesting;$/;"	v	file:
 irq_table	bsp/int/bsp_int.h	/^sys_irq_handler_t irq_table[NUMBER_OF_INT_VECTORS];$/;"	v
+irqs_disabled	stdio/include/system.h	303;"	d
+isalnum	stdio/include/ctype.h	19;"	d
+isalpha	stdio/include/ctype.h	20;"	d
+isascii	stdio/include/ctype.h	31;"	d
+iscntrl	stdio/include/ctype.h	21;"	d
+isdigit	stdio/include/ctype.h	22;"	d
+isgraph	stdio/include/ctype.h	23;"	d
+islower	stdio/include/ctype.h	24;"	d
+isprint	stdio/include/ctype.h	25;"	d
+ispunct	stdio/include/ctype.h	26;"	d
+isspace	stdio/include/ctype.h	27;"	d
+isupper	stdio/include/ctype.h	28;"	d
+isxdigit	stdio/include/ctype.h	29;"	d
 kIOMUXC_ANATOP_USB_OTG_ID_SELECT_INPUT	imx6ull/MCIMX6Y2.h	/^    kIOMUXC_ANATOP_USB_OTG_ID_SELECT_INPUT = 0U,   \/**< IOMUXC select input index *\/$/;"	e	enum:_iomuxc_select_input
 kIOMUXC_CCM_PMIC_READY_SELECT_INPUT	imx6ull/MCIMX6Y2.h	/^    kIOMUXC_CCM_PMIC_READY_SELECT_INPUT = 2U,      \/**< IOMUXC select input index *\/$/;"	e	enum:_iomuxc_select_input
 kIOMUXC_CSI_DATA00_SELECT_INPUT	imx6ull/MCIMX6Y2.h	/^    kIOMUXC_CSI_DATA00_SELECT_INPUT = 6U,          \/**< IOMUXC select input index *\/$/;"	e	enum:_iomuxc_select_input
@@ -37709,26 +37850,107 @@ key_filter_irqhandler	bsp/key_filter/key_filter.c	/^void key_filter_irqhandler(u
 led_init	bsp/led/bsp_led.c	/^void led_init(void)$/;"	f
 led_state	bsp/led/bsp_led.c	/^int led_state = OFF;$/;"	v
 led_switch	bsp/led/bsp_led.c	/^void led_switch(const int status)$/;"	f
+ll	stdio/include/gcclib.h	/^  DItype ll;$/;"	m	union:__anon78
+local_fiq_disable	stdio/include/system.h	201;"	d
+local_fiq_disable	stdio/include/system.h	269;"	d
+local_fiq_enable	stdio/include/system.h	200;"	d
+local_fiq_enable	stdio/include/system.h	254;"	d
+local_irq_disable	stdio/include/system.h	199;"	d
+local_irq_disable	stdio/include/system.h	239;"	d
+local_irq_enable	stdio/include/system.h	198;"	d
+local_irq_enable	stdio/include/system.h	224;"	d
+local_irq_restore	stdio/include/system.h	296;"	d
+local_irq_save	stdio/include/system.h	190;"	d
+local_irq_save	stdio/include/system.h	208;"	d
+local_save_flags	stdio/include/system.h	286;"	d
+low	stdio/include/gcclib.h	/^  struct DIstruct {SItype high, low;};$/;"	m	struct:DIstruct
+low	stdio/include/gcclib.h	/^  struct DIstruct {SItype low, high;};$/;"	m	struct:DIstruct
 main	project/main.c	/^int main(void)$/;"	f
+mb	stdio/include/system.h	136;"	d
 mdelay	bsp/delay/bsp_delay.c	/^void mdelay(int msec)$/;"	f
+memchr	stdio/lib/string.c	/^void *memchr(const void *s, int c, size_t n)$/;"	f
+memcmp	stdio/lib/string.c	/^int memcmp(const void * cs,const void * ct,size_t count)$/;"	f
+memcpy	stdio/lib/string.c	/^void * memcpy(void * dest,const void *src,size_t count)$/;"	f
+memmove	stdio/lib/string.c	/^void * memmove(void * dest,const void *src,size_t count)$/;"	f
+memscan	stdio/lib/string.c	/^void * memscan(void * addr, int c, size_t size)$/;"	f
+memset	stdio/lib/string.c	/^void * memset(void * s,int c,size_t count)$/;"	f
+name	stdio/lib/lib1funcs.S	/^  name:$/;"	l
+nop	stdio/include/system.h	142;"	d
+number	stdio/lib/vsprintf.c	/^static char *number(char *buf, char *end, signed long long num, int base, int size, int precision, int type)$/;"	f	file:
 output_logic	bsp/gpio/bsp_gpio.h	/^	uint8_t output_logic;$/;"	m	struct:__anon3
 param	bsp/int/bsp_int.h	/^	void *param;		$/;"	m	struct:_sys_irq_handler
+prepare_arch_switch	stdio/include/system.h	151;"	d
+prepare_arch_switch	stdio/include/system.h	168;"	d
+printf	stdio/lib/printf.c	/^int printf(const char *fmt, ...)$/;"	f
+put_dec	stdio/lib/vsprintf.c	/^static char *put_dec(char *buf, uint64_t num)$/;"	f	file:
+put_dec_full	stdio/lib/vsprintf.c	/^static char *put_dec_full(char *buf, unsigned q)$/;"	f	file:
+put_dec_trunc	stdio/lib/vsprintf.c	/^static char *put_dec_trunc(char *buf, unsigned q)$/;"	f	file:
 putc	bsp/uart/bsp_uart.c	/^void putc(unsigned char c)$/;"	f
-puts	bsp/uart/bsp_uart.c	/^void puts(char *str)$/;"	f
+raise	bsp/uart/bsp_uart.c	/^void raise(int sig_nr)$/;"	f
+read_barrier_depends	stdio/include/system.h	139;"	d
+read_cpuid	stdio/include/system.h	50;"	d
 read_key	bsp/key0/bsp_key0.c	/^const int read_key(void)$/;"	f
+rmb	stdio/include/system.h	137;"	d
+s	stdio/include/gcclib.h	/^  struct DIstruct s;$/;"	m	union:__anon78	typeref:struct:__anon78::DIstruct
 s16	imx6ull/cc.h	/^typedef	  signed short 	  int  s16;$/;"	t
 s32	imx6ull/cc.h	/^typedef	  signed int 		   s32;$/;"	t
 s64	imx6ull/cc.h	/^typedef	  signed long long int s64;$/;"	t
 s8	imx6ull/cc.h	/^typedef	  signed char  	 	   s8;		$/;"	t
+scanf	stdio/lib/printf.c	/^int scanf(const char * fmt, ...)$/;"	f
+scnprintf	stdio/lib/vsprintf.c	/^int scnprintf(char * buf, size_t size, const char *fmt, ...)$/;"	f
 sec	bsp/epit/bsp_epit.h	/^	int sec;$/;"	m	struct:__anon4
+set_cr	stdio/include/system.h	105;"	d
+set_mb	stdio/include/system.h	140;"	d
+set_wmb	stdio/include/system.h	141;"	d
+simple_strtol	stdio/lib/vsprintf.c	/^long simple_strtol(const char *cp,char **endp,unsigned int base)$/;"	f
+simple_strtoll	stdio/lib/vsprintf.c	/^long long simple_strtoll(const char *cp,char **endp,unsigned int base)$/;"	f
+simple_strtoul	stdio/lib/vsprintf.c	/^unsigned long simple_strtoul(const char *cp,char **endp,unsigned int base)$/;"	f
+simple_strtoull	stdio/lib/vsprintf.c	/^unsigned long long simple_strtoull(const char *cp,char **endp,unsigned int base)$/;"	f
+size_t	stdio/include/types.h	/^typedef unsigned int size_t;$/;"	t
+skip_atoi	stdio/lib/vsprintf.c	/^static int skip_atoi(const char **s)$/;"	f	file:
+smp_mb	stdio/include/system.h	313;"	d
+smp_mb	stdio/include/system.h	320;"	d
+smp_read_barrier_depends	stdio/include/system.h	316;"	d
+smp_read_barrier_depends	stdio/include/system.h	323;"	d
+smp_rmb	stdio/include/system.h	314;"	d
+smp_rmb	stdio/include/system.h	321;"	d
+smp_wmb	stdio/include/system.h	315;"	d
+smp_wmb	stdio/include/system.h	322;"	d
+snprintf	stdio/lib/vsprintf.c	/^int snprintf(char * buf, size_t size, const char *fmt, ...)$/;"	f
+sprintf	stdio/lib/vsprintf.c	/^int sprintf(char * buf, const char *fmt, ...)$/;"	f
+sscanf	stdio/lib/vsprintf.c	/^int sscanf(const char * buf, const char * fmt, ...)$/;"	f
 start_epit	bsp/epit/bsp_epit.c	/^void start_epit(int val)$/;"	f
 status_t	imx6ull/fsl_common.h	/^typedef int32_t status_t;$/;"	t
 stop_epit	bsp/epit/bsp_epit.c	/^void stop_epit(void)$/;"	f
+strcat	stdio/lib/string.c	/^char * strcat(char * dest, const char * src)$/;"	f
+strchr	stdio/lib/string.c	/^char * strchr(const char * s, int c)$/;"	f
+strcmp	stdio/lib/string.c	/^int strcmp(const char * cs,const char * ct)$/;"	f
+strcpy	stdio/lib/string.c	/^char * strcpy(char * dest,const char *src)$/;"	f
+strlen	stdio/lib/string.c	/^size_t strlen(const char * s)$/;"	f
+strncat	stdio/lib/string.c	/^char * strncat(char *dest, const char *src, size_t count)$/;"	f
+strncmp	stdio/lib/string.c	/^int strncmp(const char * cs,const char * ct,size_t count)$/;"	f
+strncpy	stdio/lib/string.c	/^char * strncpy(char * dest,const char *src,size_t count)$/;"	f
+strnicmp	stdio/lib/string.c	/^int strnicmp(const char *s1, const char *s2, size_t len)$/;"	f
+strnlen	stdio/lib/string.c	/^size_t strnlen(const char * s, size_t count)$/;"	f
+strpbrk	stdio/lib/string.c	/^char * strpbrk(const char * cs,const char * ct)$/;"	f
+strrchr	stdio/lib/string.c	/^char * strrchr(const char * s, int c)$/;"	f
+strsep	stdio/lib/string.c	/^char * strsep(char **s, const char *ct)$/;"	f
+strspn	stdio/lib/string.c	/^size_t strspn(const char *s, const char *accept)$/;"	f
+strstr	stdio/lib/string.c	/^char * strstr(const char * s1,const char * s2)$/;"	f
+strtok	stdio/lib/string.c	/^char * strtok(char * s,const char * ct)$/;"	f
+switch_to	stdio/include/system.h	180;"	d
+swp_is_buggy	stdio/include/system.h	338;"	d
 sys_irq_handler	bsp/int/bsp_int.h	/^typedef void (*sys_irq_handler)(unsigned int giccIar, void *param);$/;"	t
 sys_irq_handler_t	bsp/int/bsp_int.h	/^} sys_irq_handler_t;$/;"	t	typeref:struct:_sys_irq_handler
 system_irqhandler	bsp/int/bsp_int.c	/^void system_irqhandler(unsigned int giccIar, void *param)$/;"	f
 system_irqtable_init	bsp/int/bsp_int.c	/^void system_irqtable_init(void)$/;"	f
 system_register_irqhandler	bsp/int/bsp_int.c	/^void system_register_irqhandler(IRQn_Type irq, sys_irq_handler handler, void *param)$/;"	f
+tas	stdio/include/system.h	99;"	d
+task_running	stdio/include/system.h	160;"	d
+task_running	stdio/include/system.h	170;"	d
+toascii	stdio/include/ctype.h	32;"	d
+tolower	stdio/include/ctype.h	48;"	d
+toupper	stdio/include/ctype.h	49;"	d
 u16	imx6ull/cc.h	/^typedef	unsigned short int     u16;$/;"	t
 u32	imx6ull/cc.h	/^typedef	unsigned int 		   u32;$/;"	t
 u64	imx6ull/cc.h	/^typedef	unsigned long long int u64;$/;"	t
@@ -37737,11 +37959,25 @@ uart_disable	bsp/uart/bsp_uart.c	/^void uart_disable(UART_Type *base)$/;"	f
 uart_enable	bsp/uart/bsp_uart.c	/^void uart_enable(UART_Type *base)$/;"	f
 uart_init	bsp/uart/bsp_uart.c	/^void uart_init(void)$/;"	f
 uart_io_init	bsp/uart/bsp_uart.c	/^void uart_io_init(void)$/;"	f
+uart_softreset	bsp/uart/bsp_uart.c	/^void uart_softreset(UART_Type *base)$/;"	f
 udelay	bsp/delay/bsp_delay.c	/^void udelay(int usec)$/;"	f
 uint16_t	imx6ull/cc.h	/^typedef unsigned short     int uint16_t;$/;"	t
 uint32_t	imx6ull/cc.h	/^typedef unsigned           int uint32_t;$/;"	t
 uint64_t	imx6ull/cc.h	/^typedef unsigned long     long uint64_t;$/;"	t
 uint8_t	imx6ull/cc.h	/^typedef unsigned          char uint8_t;$/;"	t
+umul_ppmm	stdio/lib/muldi3.c	34;"	d	file:
+unlikely	stdio/lib/vsprintf.c	30;"	d	file:
+va_arg	stdio/include/vsprintf.h	29;"	d
+va_end	stdio/include/vsprintf.h	30;"	d
+va_list	stdio/include/stdio.h	/^typedef char *va_list;$/;"	t
+va_list	stdio/include/vsprintf.h	/^typedef char *va_list;$/;"	t
+va_start	stdio/include/vsprintf.h	31;"	d
+vectors_high	stdio/include/system.h	131;"	d
+vectors_high	stdio/include/system.h	133;"	d
+vscnprintf	stdio/lib/vsprintf.c	/^int vscnprintf(char *buf, size_t size, const char *fmt, va_list args)$/;"	f
+vsnprintf	stdio/lib/vsprintf.c	/^int vsnprintf(char *buf, size_t size, const char *fmt, va_list args)$/;"	f
+vsprintf	stdio/lib/vsprintf.c	/^int vsprintf(char *buf, const char *fmt, va_list args)$/;"	f
+vsscanf	stdio/lib/vsprintf.c	/^int vsscanf(const char * buf, const char * fmt, va_list args)$/;"	f
 w	imx6ull/core_ca7.h	/^  uint32_t w;                            \/*!< Type      used for word access *\/$/;"	m	union:__anon63
 w	imx6ull/core_ca7.h	/^  uint32_t w;                            \/*!< Type      used for word access *\/$/;"	m	union:__anon65
 w	imx6ull/core_ca7.h	/^  uint32_t w;                            \/*!< Type      used for word access *\/$/;"	m	union:__anon67
@@ -37749,3 +37985,6 @@ w	imx6ull/core_ca7.h	/^  uint32_t w;                            \/*!< Type      
 w	imx6ull/core_ca7.h	/^  uint32_t w;                            \/*!< Type      used for word access *\/$/;"	m	union:__anon71
 w	imx6ull/core_ca7.h	/^  uint32_t w;                            \/*!< Type      used for word access *\/$/;"	m	union:__anon73
 w	imx6ull/core_ca7.h	/^  uint32_t w;                            \/*!< Type      used for word access *\/$/;"	m	union:__anon75
+wmb	stdio/include/system.h	138;"	d
+word_type	stdio/include/gcclib.h	/^typedef          int word_type 	__attribute__ ((mode (__word__)));$/;"	t
+xchg	stdio/include/system.h	96;"	d
