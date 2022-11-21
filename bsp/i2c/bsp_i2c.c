@@ -144,7 +144,7 @@ void clear_iff(I2C_Type *base)
 	base->I2SR &= ~(1 << 1);
 }
 
-unsigned i2c_mater_transfer(I2C_Type *base, struct i2c_transfer *xfer)
+unsigned i2c_master_transfer(I2C_Type *base, struct i2c_transfer *xfer)
 {
 	unsigned char ret = 0;
 	enum i2c_direction direction = xfer->direction;	

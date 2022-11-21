@@ -40,7 +40,7 @@ void i2c_master_write(I2C_Type *base, const unsigned char *buf, unsigned int siz
 
 void i2c_master_read(I2C_Type *base, unsigned char *buf, unsigned int size);
 
-unsigned i2c_mater_transfer(I2C_Type *base, struct i2c_transfer *xfer);
+unsigned i2c_master_transfer(I2C_Type *base, struct i2c_transfer *xfer);
 
 void wait_for_xfer_complete(I2C_Type *base);
 
