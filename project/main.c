@@ -10,6 +10,7 @@
 #include "bsp_epit.h"
 #include "key_filter.h"
 #include "bsp_uart.h"
+#include "bsp_ap3216c.h"
 #include "stdio.h"
 
 int main(void)
@@ -27,6 +28,8 @@ int main(void)
 	epit_init();
 	key_filter_init();
 	uart_init();
+	ap3216c_init();
+
 
 	while(1)			/* 死循环 				*/
 	{	
