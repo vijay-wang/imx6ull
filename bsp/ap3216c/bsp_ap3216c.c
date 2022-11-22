@@ -1,4 +1,4 @@
-#include "bsp_ap3216.h"
+#include "bsp_ap3216c.h"
 #include "stdio.h"
 #include "cc.h"
 #include "bsp_i2c.h"
@@ -21,31 +21,32 @@ unsigned char ap3216c_init(void)
 
 	/*初始化ap3216c*/
 	ap3216c_writeonebyte(AP3216C_ADDR, AP3216_SYSTEMCONF, 0x04); /*复位AP3216C1*/
-	mdelay(10);
-
+	mdelay(50);
 	ap3216c_writeonebyte(AP3216C_ADDR, AP3216_SYSTEMCONF, 0x03); /*开启ALS，PS，IR模块*/
 
 	data = ap3216c_readonebyte(AP3216C_ADDR, AP3216_SYSTEMCONF);
 	if (data == 0x03) {
-		printf("Initialization successful\n");
+		printf("Initialization successful\r\n");
 		return 0; /*ap3216c初始化正常*/
 	} else {
-		printf("Initialization faild\n");
+		printf("Initialization faild\r\n");
 		return 1; /*ap3216c初始化失败*/
 	}
+	return data;
 }
 
 unsigned char ap3216c_writeonebyte(unsigned char addr, unsigned char reg,
 		unsigned char data)
 {
 	unsigned char status = 0;	
+	unsigned char wdata = data;	
 	struct i2c_transfer wxfer;
 
 	wxfer.direction = KI2C_Write;
 	wxfer.slaveAddress = addr;
 	wxfer.subaddress = reg;
 	wxfer.subaddressSize = 1;
-	wxfer.data = &data;
+	wxfer.data = &wdata;
 	wxfer.dataSize = 1;
 
 	if (i2c_master_transfer(I2C1, &wxfer))

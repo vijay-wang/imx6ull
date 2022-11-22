@@ -12,6 +12,21 @@ void i2c_init(I2C_Type *base)
 	base->I2CR |= (0x1 << 7);
 }
 
+unsigned char i2c_master_repeated_start(I2C_Type *base, unsigned char addr,
+					enum i2c_direction direction)
+{
+	/*检查I2C是否忙或工作在从机模式下*/
+	if (base->I2SR & (0x1 << 5) && (((base->I2CR) & (0x1 << 5)) == 0))
+		return 1;
+
+	/*设置发送，和发送repeat start*/
+	base->I2CR |= (0x1 << 4) | (0x1 << 2);
+
+        base->I2DR  = ((unsigned int)addr << 1) | (direction == KI2C_Read ? KI2C_Read : KI2C_Write );
+
+	return I2C_STATUS_OK;
+}
+
 unsigned char i2c_master_start(I2C_Type *base, unsigned char addr, enum i2c_direction direction)
 {
 	if (base->I2SR & (0x1 << 5)) //i2c busy
@@ -25,6 +40,23 @@ unsigned char i2c_master_start(I2C_Type *base, unsigned char addr, enum i2c_dire
 	base->I2DR  = ((unsigned int)addr << 1) | (direction == KI2C_Read ? KI2C_Read : KI2C_Write );
 
 	return 0;
+}
+
+
+
+unsigned char i2c_check_and_clear_error(I2C_Type *base, unsigned int status)
+{
+	/*检查是否为仲裁丢失*/
+	if (status & (0x1 << 4)) {
+		base->I2SR &= ~(0x1 << 4);
+		base->I2CR &= ~(0x1 << 7);
+		base->I2CR |= (0x1 << 7);
+		return I2C_STATUS_ARBITRATIONLOST;
+	} else if (status & (0x1 << 0)) {
+		return I2C_STATUS_NAK;
+	}
+
+	return I2C_STATUS_OK;
 }
 
 unsigned char i2c_master_stop(I2C_Type *base)
@@ -42,36 +74,6 @@ unsigned char i2c_master_stop(I2C_Type *base)
 	return I2C_STATUS_OK;	
 }
 
-unsigned char i2c_master_repeated_start(I2C_Type *base, unsigned char addr,
-					enum i2c_direction direction)
-{
-	/*检查I2C是否忙或工作在从机模式下*/
-	if (base->I2SR & (0x1 << 5) || (((base->I2CR) & (0x1 << 5)) == 0))
-		return 1;
-
-	/*设置发送，和发送repeat start*/
-	base->I2CR |= (0x1 << 4) | (0x1 << 2);
-
-        base->I2DR  = ((unsigned int)addr << 1) | (direction == KI2C_Read ? KI2C_Read : KI2C_Write );
-
-	return I2C_STATUS_OK;
-}
-
-unsigned char i2c_check_and_clear_error(I2C_Type *base, unsigned int status)
-{
-	/*检查是否为仲裁丢失*/
-	if (status & (0x1 << 4)) {
-		base->I2SR &= ~(0x1 << 4);
-		base->I2CR &= ~(0x1 << 4);
-		base->I2SR |= (0x1 << 4);
-		return I2C_STATUS_ARBITRATIONLOST;
-	} else if (status & (0x1 << 0)) {
-		return I2C_STATUS_NAK;
-	}
-
-	return I2C_STATUS_OK;
-}
-
 
 /*发送数据*/
 void i2c_master_write(I2C_Type *base, const unsigned char *buf, unsigned int size)
@@ -79,14 +81,14 @@ void i2c_master_write(I2C_Type *base, const unsigned char *buf, unsigned int siz
 	/*等待传输完成*/
 	while (!(base->I2SR & (0x1 << 7)));
 
-	base->I2CR &= ~(0x1 << 1); /*清除中断标志,手册写着有，传输1byte完成后会产生中断*/
+	base->I2SR &= ~(0x1 << 1); /*清除中断标志,手册写着有，传输1byte完成后会产生中断*/
 	base->I2CR |= 0x1 << 4; /*Transmit/Receive mode select bit. 0 Receive，1 Transmit*/
 
 	while (size--) {
 		base->I2DR = *buf++;
 
 		while (!(base->I2SR & (0x1 << 1))); /*等待传输完成*/
-		base->I2CR &= ~(0x1 << 1); /*清除中断标志,手册写着有，传输1byte完成后会产生中断*/
+		base->I2SR &= ~(0x1 << 1); /*清除中断标志,手册写着有，传输1byte完成后会产生中断*/
 
 		if(i2c_check_and_clear_error(base,base->I2SR)) /*检查ACK*/
 			break;
@@ -100,7 +102,7 @@ void i2c_master_write(I2C_Type *base, const unsigned char *buf, unsigned int siz
 
 void i2c_master_read(I2C_Type *base, unsigned char *buf, unsigned int size)
 {
-	volatile int8_t dummy = 0;
+	volatile uint8_t dummy = 0;
 	dummy++; /*防止编译报错*/
 
 	while (!(base->I2SR & (0x1 << 7))); /*等待传输完成*/
@@ -117,6 +119,8 @@ void i2c_master_read(I2C_Type *base, unsigned char *buf, unsigned int size)
 	/*从机在接收倒数第二字节数据的时候就设置TXAK位为1，那么下一个字节发送之后就会发送NACK*/
 	if (size ==1)
 		base->I2CR |= (0x1 << 3);
+
+	dummy = base->I2DR; /*假读，否则程序会卡死*/
 
 	while (size--) {
 		while (!(base->I2SR & (0x1 << 1))); /*等待传输完成*/
