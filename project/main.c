@@ -21,7 +21,6 @@ struct ap3216c_data {
 
 int main(void)
 {
-	int a,b;
 	struct ap3216c_data sensor_data;
 
 	int_init();
@@ -45,9 +44,7 @@ int main(void)
 		printf("\r\nps:%hd", sensor_data.ps);
 		printf("\r\nals:%hd", sensor_data.als);
 
-		printf("please enter two numbers that sepated by space:");
-		scanf("%d %d", &a, &b);
-		printf("\r\na + b = %d\r\n", a + b);
+		mdelay(1000);
 	}
 
 	return 0;
