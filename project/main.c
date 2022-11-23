@@ -13,9 +13,16 @@
 #include "bsp_ap3216c.h"
 #include "stdio.h"
 
+struct ap3216c_data {
+	unsigned short ir;
+	unsigned short als;
+	unsigned short ps;
+};
+
 int main(void)
 {
 	int a,b;
+	struct ap3216c_data sensor_data;
 
 	int_init();
 	imx6u_clkinit();
@@ -33,6 +40,11 @@ int main(void)
 
 	while(1)			/* 死循环 				*/
 	{	
+		ap3216c_readdata(&sensor_data.ir, &sensor_data.ps, &sensor_data.als);
+		printf("\r\nir:%hd", sensor_data.ir);
+		printf("\r\nps:%hd", sensor_data.ps);
+		printf("\r\nals:%hd", sensor_data.als);
+
 		printf("please enter two numbers that sepated by space:");
 		scanf("%d %d", &a, &b);
 		printf("\r\na + b = %d\r\n", a + b);

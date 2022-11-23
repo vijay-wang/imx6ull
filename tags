@@ -388,16 +388,16 @@ ALU_B_PARAM	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ALU_B_PARAM;                   
 ANA0	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ANA0;                              \/**< Value of OTP Bank1 Word5 (Memory Related Info.), offset: 0x4D0 *\/$/;"	m	struct:__anon36
 ANA1	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ANA1;                              \/**< Value of OTP Bank1 Word6 (General Purpose Customer Defined Info.), offset: 0x4E0 *\/$/;"	m	struct:__anon36
 ANA2	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ANA2;                              \/**< Value of OTP Bank1 Word7 (General Purpose Customer Defined Info.), offset: 0x4F0 *\/$/;"	m	struct:__anon36
-AP3216_ADDR	bsp/ap3216c/bsp_ap3216.h	6;"	d
-AP3216_ALSDATAHIGH	bsp/ap3216c/bsp_ap3216.h	14;"	d
-AP3216_ALSDATALOW	bsp/ap3216c/bsp_ap3216.h	13;"	d
-AP3216_INTCLEARMANNER	bsp/ap3216c/bsp_ap3216.h	10;"	d
-AP3216_INTSTATUS	bsp/ap3216c/bsp_ap3216.h	9;"	d
-AP3216_IRDATAHIGH	bsp/ap3216c/bsp_ap3216.h	12;"	d
-AP3216_IRDATALOW	bsp/ap3216c/bsp_ap3216.h	11;"	d
-AP3216_PSDATAHIGH	bsp/ap3216c/bsp_ap3216.h	16;"	d
-AP3216_PSDATALOW	bsp/ap3216c/bsp_ap3216.h	15;"	d
-AP3216_SYSTEMCONF	bsp/ap3216c/bsp_ap3216.h	8;"	d
+AP3216C_ADDR	bsp/ap3216c/bsp_ap3216c.h	6;"	d
+AP3216_ALSDATAHIGH	bsp/ap3216c/bsp_ap3216c.h	14;"	d
+AP3216_ALSDATALOW	bsp/ap3216c/bsp_ap3216c.h	13;"	d
+AP3216_INTCLEARMANNER	bsp/ap3216c/bsp_ap3216c.h	10;"	d
+AP3216_INTSTATUS	bsp/ap3216c/bsp_ap3216c.h	9;"	d
+AP3216_IRDATAHIGH	bsp/ap3216c/bsp_ap3216c.h	12;"	d
+AP3216_IRDATALOW	bsp/ap3216c/bsp_ap3216c.h	11;"	d
+AP3216_PSDATAHIGH	bsp/ap3216c/bsp_ap3216c.h	16;"	d
+AP3216_PSDATALOW	bsp/ap3216c/bsp_ap3216c.h	15;"	d
+AP3216_SYSTEMCONF	bsp/ap3216c/bsp_ap3216c.h	8;"	d
 APBH	imx6ull/MCIMX6Y2.h	4335;"	d
 APBH_BASE	imx6ull/MCIMX6Y2.h	4333;"	d
 APBH_BASE_ADDRS	imx6ull/MCIMX6Y2.h	4337;"	d
@@ -37170,7 +37170,7 @@ _X	stdio/include/ctype.h	12;"	d
 __ASM	imx6ull/core_ca7.h	19;"	d
 __ASM_ARM_DIV64	stdio/include/div64.h	2;"	d
 __ASM_ARM_SYSTEM_H	stdio/include/system.h	2;"	d
-__BSP_AP3216_H	bsp/ap3216c/bsp_ap3216.h	2;"	d
+__BSP_AP3216_H	bsp/ap3216c/bsp_ap3216c.h	2;"	d
 __BSP_BEEP_H	bsp/beep/bsp_beep.h	2;"	d
 __BSP_CLK_H	bsp/clk/bsp_clk.h	2;"	d
 __BSP_DELAY_H	bsp/delay/bsp_delay.h	2;"	d
@@ -37281,9 +37281,10 @@ _reserved7	imx6ull/core_ca7.h	/^    uint32_t _reserved7:3;               \/*!< b
 _start	project/start.s	/^_start:$/;"	l
 _status_groups	imx6ull/fsl_common.h	/^enum _status_groups$/;"	g
 _sys_irq_handler	bsp/int/bsp_int.h	/^typedef struct  _sys_irq_handler {$/;"	s
-ap3216c_init	bsp/ap3216c/bsp_ap3216.c	/^unsigned char ap3216c_init(void)$/;"	f
-ap3216c_readonebyte	bsp/ap3216c/bsp_ap3216.c	/^unsigned char ap3216c_readonebyte(unsigned char addr, unsigned char reg)$/;"	f
-ap3216c_writeonebyte	bsp/ap3216c/bsp_ap3216.c	/^unsigned char ap3216c_writeonebyte(unsigned char addr, unsigned char reg,$/;"	f
+ap3216c_init	bsp/ap3216c/bsp_ap3216c.c	/^unsigned char ap3216c_init(void)$/;"	f
+ap3216c_readdata	bsp/ap3216c/bsp_ap3216c.c	/^void ap3216c_readdata(unsigned short *ir, unsigned short *ps, unsigned short *als)$/;"	f
+ap3216c_readonebyte	bsp/ap3216c/bsp_ap3216c.c	/^unsigned char ap3216c_readonebyte(unsigned char addr, unsigned char reg)$/;"	f
+ap3216c_writeonebyte	bsp/ap3216c/bsp_ap3216c.c	/^unsigned char ap3216c_writeonebyte(unsigned char addr, unsigned char reg,$/;"	f
 b	imx6ull/core_ca7.h	/^  } b;                                   \/*!< Structure used for bit  access *\/$/;"	m	union:__anon63	typeref:struct:__anon63::__anon64
 b	imx6ull/core_ca7.h	/^  } b;                                   \/*!< Structure used for bit  access *\/$/;"	m	union:__anon65	typeref:struct:__anon65::__anon66
 b	imx6ull/core_ca7.h	/^  } b;                                   \/*!< Structure used for bit  access *\/$/;"	m	union:__anon67	typeref:struct:__anon67::__anon68
@@ -37346,8 +37347,8 @@ i2c_master_read	bsp/i2c/bsp_i2c.c	/^void i2c_master_read(I2C_Type *base, unsigne
 i2c_master_repeated_start	bsp/i2c/bsp_i2c.c	/^unsigned char i2c_master_repeated_start(I2C_Type *base, unsigned char addr,$/;"	f
 i2c_master_start	bsp/i2c/bsp_i2c.c	/^unsigned char i2c_master_start(I2C_Type *base, unsigned char addr, enum i2c_direction direction)$/;"	f
 i2c_master_stop	bsp/i2c/bsp_i2c.c	/^unsigned char i2c_master_stop(I2C_Type *base)$/;"	f
+i2c_master_transfer	bsp/i2c/bsp_i2c.c	/^unsigned i2c_master_transfer(I2C_Type *base, struct i2c_transfer *xfer)$/;"	f
 i2c_master_write	bsp/i2c/bsp_i2c.c	/^void i2c_master_write(I2C_Type *base, const unsigned char *buf, unsigned int size)$/;"	f
-i2c_mater_transfer	bsp/i2c/bsp_i2c.c	/^unsigned i2c_mater_transfer(I2C_Type *base, struct i2c_transfer *xfer)$/;"	f
 i2c_transfer	bsp/i2c/bsp_i2c.h	/^struct i2c_transfer {$/;"	s
 imx6u_clkinit	bsp/clk/bsp_clk.c	/^void imx6u_clkinit(void)$/;"	f
 int16_t	imx6ull/cc.h	/^typedef   signed short     int int16_t;$/;"	t

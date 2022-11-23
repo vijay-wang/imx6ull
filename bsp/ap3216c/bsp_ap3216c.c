@@ -81,8 +81,20 @@ void ap3216c_readdata(unsigned short *ir, unsigned short *ps, unsigned short *al
 		buf[i] = ap3216c_readonebyte(AP3216C_ADDR, AP3216_IRDATALOW + i);
 	}
 
-	if (buf[0] & 0x80) /*IR_OF位为1, 则数据无效*/
-		*ir = 0;
+	*ir = ((unsigned short)buf[1] << 2) | (buf[0] & 0x3);
+
+	*als = ((unsigned short)buf[3] << 8) |buf[2];
+
+	/* ps datalow[IR_OF] 或 ps data high[IR_OF]则ps数据无效
+	 * If the IR is high intensity, it will affect the PS data and cause the 
+	 * PS data invalid. There is an overflow flag (IR_OF) to indicate the 
+	 * PS data to see if it is valid or not in high IR light. If the IR_OF
+	 * is set to 1, the device will force the PS object status as away state.. */
+	if ((buf[4] & 0x4) || (buf[4] & 0x4)) /*ps数据无效*/
+		*ps = 0;
 	else
-		*ir = 0;
+		*ps = (((unsigned short)buf[5] & 0x3f) << 4) | (buf[4] & 0xf);
+
+
 }
+
