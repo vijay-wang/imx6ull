@@ -86,5 +86,9 @@ void imx6u_clkinit(void)
 
 	//CCM_CSCMR1[PERCLK_PODF]
 	CCM->CSCMR1 &= ~(0x3f << 0);
+
+	/*设置ECSPI根时钟为PLL3——60MHz*/
+	CCM->CSCDR2 &= ~(0x1 << 18);
+	CCM->CSCDR2 &= ~(0x3f << 19); /*1分频*/
 	
 }
