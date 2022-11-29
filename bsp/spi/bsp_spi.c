@@ -9,7 +9,7 @@ void spi_init(ECSPI_Type *base)
 	 * bit19-18	00	选中通道0
 	 * bit31-20	0x7	突发长度为8bit*/
 	base->CONREG = 0;
-	base->CONREG |= (0x1 << 3) | (0x1 << 4) | (0x7 << 20);	
+	base->CONREG |= (0x1 << 0) | (0x1 << 3) | (0x1 << 4) | (0x7 << 20);	
 
 	/*                                                                                              
 	 * ECSPI通道0设置,即设置CONFIGREG寄存器                                                             
