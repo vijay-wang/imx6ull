@@ -1,4 +1,5 @@
 #include "bsp_spi.h"
+#include "stdio.h"
 
 void spi_init(ECSPI_Type *base)
 {
@@ -37,12 +38,11 @@ unsigned char spich0_readwrite_byte(ECSPI_Type *base, unsigned char txdata)
 	/*选择通道0*/
 	base->CONREG &= ~(0x3 << 18);
 	base->CONREG |= (0x0 << 18);
+	while((base->STATREG & (0x1 << 0)) == 0) {}/*等待发送FIFO为空*/
+	base->TXDATA = spitxdata;	
 
-	while((base->STATREG & (0x1 << 0)) == 0) /*等待发送FIFO为空*/
-		base->TXDATA = spitxdata;	
-
-	while((base->STATREG & (0x1 << 3)) == 0)/*等待接收FIFO为空*/
-		spirxdata = base->RXDATA;
+	while((base->STATREG & (0x1 << 3)) == 0) {}/*等待接收FIFO有数据*/
+	spirxdata = base->RXDATA;
 
 	return spirxdata;
 }
