@@ -12296,6 +12296,7 @@ I2S_Type	imx6ull/MCIMX6Y2.h	/^} I2S_Type;$/;"	t	typeref:struct:__anon29
 IADR	imx6ull/MCIMX6Y2.h	/^  __IO uint16_t IADR;                              \/**< I2C Address Register, offset: 0x0 *\/$/;"	m	struct:__anon28
 IALR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t IALR;                              \/**< Descriptor Individual Lower Address Register, offset: 0x11C *\/$/;"	m	struct:__anon20
 IAUR	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t IAUR;                              \/**< Descriptor Individual Upper Address Register, offset: 0x118 *\/$/;"	m	struct:__anon20
+ICM20608_CSN	bsp/icm20608/bsp_icm20608.h	7;"	d
 ICR	imx6ull/MCIMX6Y2.h	/^  __I  uint32_t ICR[2];                            \/**< GPT Input Capture Register 1..GPT Input Capture Register 2, array offset: 0x1C, array step: 0x4 *\/$/;"	m	struct:__anon27
 ICR1	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ICR1;                              \/**< GPIO interrupt configuration register1, offset: 0xC *\/$/;"	m	struct:__anon25
 ICR2	imx6ull/MCIMX6Y2.h	/^  __IO uint32_t ICR2;                              \/**< GPIO interrupt configuration register2, offset: 0x10 *\/$/;"	m	struct:__anon25
@@ -37175,8 +37176,10 @@ __BSP_BEEP_H	bsp/beep/bsp_beep.h	2;"	d
 __BSP_CLK_H	bsp/clk/bsp_clk.h	2;"	d
 __BSP_DELAY_H	bsp/delay/bsp_delay.h	2;"	d
 __BSP_I2C_H	bsp/i2c/bsp_i2c.h	2;"	d
+__BSP_ICM20608_H	bsp/icm20608/bsp_icm20608.h	2;"	d
 __BSP_INT_H	bsp/int/bsp_int.h	2;"	d
 __BSP_LED_H	bsp/led/bsp_led.h	2;"	d
+__BSP_SPI_H	bsp/spi/bsp_spi.h	2;"	d
 __BSP_UART_H	bsp/uart/bsp_uart.h	2;"	d
 __BSP__EPIT_H	bsp/epit/bsp_epit.h	2;"	d
 __CA7_REV	imx6ull/MCIMX6Y2.h	212;"	d
@@ -37281,6 +37284,8 @@ _reserved7	imx6ull/core_ca7.h	/^    uint32_t _reserved7:3;               \/*!< b
 _start	project/start.s	/^_start:$/;"	l
 _status_groups	imx6ull/fsl_common.h	/^enum _status_groups$/;"	g
 _sys_irq_handler	bsp/int/bsp_int.h	/^typedef struct  _sys_irq_handler {$/;"	s
+als	project/main.c	/^	unsigned short als;$/;"	m	struct:ap3216c_data	file:
+ap3216c_data	project/main.c	/^struct ap3216c_data {$/;"	s	file:
 ap3216c_init	bsp/ap3216c/bsp_ap3216c.c	/^unsigned char ap3216c_init(void)$/;"	f
 ap3216c_readdata	bsp/ap3216c/bsp_ap3216c.c	/^void ap3216c_readdata(unsigned short *ir, unsigned short *ps, unsigned short *als)$/;"	f
 ap3216c_readonebyte	bsp/ap3216c/bsp_ap3216c.c	/^unsigned char ap3216c_readonebyte(unsigned char addr, unsigned char reg)$/;"	f
@@ -37350,6 +37355,13 @@ i2c_master_stop	bsp/i2c/bsp_i2c.c	/^unsigned char i2c_master_stop(I2C_Type *base
 i2c_master_transfer	bsp/i2c/bsp_i2c.c	/^unsigned i2c_master_transfer(I2C_Type *base, struct i2c_transfer *xfer)$/;"	f
 i2c_master_write	bsp/i2c/bsp_i2c.c	/^void i2c_master_write(I2C_Type *base, const unsigned char *buf, unsigned int size)$/;"	f
 i2c_transfer	bsp/i2c/bsp_i2c.h	/^struct i2c_transfer {$/;"	s
+icm20608_accel_scaleget	bsp/icm20608/bsp_icm20608.c	/^unsigned short icm20608_accel_scaleget(void)$/;"	f
+icm20608_getdata	bsp/icm20608/bsp_icm20608.c	/^void icm20608_getdata(void)$/;"	f
+icm20608_gyro_scaleget	bsp/icm20608/bsp_icm20608.c	/^float icm20608_gyro_scaleget(void)$/;"	f
+icm20608_init	bsp/icm20608/bsp_icm20608.c	/^void icm20608_init(void)$/;"	f
+icm20608_read_len	bsp/icm20608/bsp_icm20608.c	/^void icm20608_read_len(unsigned char reg, unsigned char *buf, unsigned char len)$/;"	f
+icm20608_read_reg	bsp/icm20608/bsp_icm20608.c	/^void icm20608_read_reg(unsigned char reg)$/;"	f
+icm20608_write_reg	bsp/icm20608/bsp_icm20608.c	/^void icm20608_write_reg(unsigned char reg, unsigned char value)$/;"	f
 imx6u_clkinit	bsp/clk/bsp_clk.c	/^void imx6u_clkinit(void)$/;"	f
 int16_t	imx6ull/cc.h	/^typedef   signed short     int int16_t;$/;"	t
 int32_t	imx6ull/cc.h	/^typedef   signed           int int32_t;$/;"	t
@@ -37363,6 +37375,7 @@ iomuxc_snvs_sw_pad_ctl_pad_t	imx6ull/MCIMX6Y2.h	/^} iomuxc_snvs_sw_pad_ctl_pad_t
 iomuxc_sw_mux_ctl_pad_t	imx6ull/MCIMX6Y2.h	/^} iomuxc_sw_mux_ctl_pad_t;$/;"	t	typeref:enum:_iomuxc_sw_mux_ctl_pad
 iomuxc_sw_pad_ctl_pad_ddr_t	imx6ull/MCIMX6Y2.h	/^} iomuxc_sw_pad_ctl_pad_ddr_t;$/;"	t	typeref:enum:_iomuxc_sw_pad_ctl_pad_ddr
 iomuxc_sw_pad_ctl_pad_t	imx6ull/MCIMX6Y2.h	/^} iomuxc_sw_pad_ctl_pad_t;$/;"	t	typeref:enum:_iomuxc_sw_pad_ctl_pad
+ir	project/main.c	/^	unsigned short ir;$/;"	m	struct:ap3216c_data	file:
 irq_hdl	bsp/int/bsp_int.h	/^	sys_irq_handler irq_hdl;$/;"	m	struct:_sys_irq_handler
 irq_nesting	bsp/int/bsp_int.c	/^static unsigned int irq_nesting;$/;"	v	file:
 irq_table	bsp/int/bsp_int.h	/^sys_irq_handler_t irq_table[NUMBER_OF_INT_VECTORS];$/;"	v
@@ -37906,6 +37919,7 @@ param	bsp/int/bsp_int.h	/^	void *param;		$/;"	m	struct:_sys_irq_handler
 prepare_arch_switch	stdio/include/system.h	151;"	d
 prepare_arch_switch	stdio/include/system.h	168;"	d
 printf	stdio/lib/printf.c	/^int printf(const char *fmt, ...)$/;"	f
+ps	project/main.c	/^	unsigned short ps;$/;"	m	struct:ap3216c_data	file:
 put_dec	stdio/lib/vsprintf.c	/^static char *put_dec(char *buf, uint64_t num)$/;"	f	file:
 put_dec_full	stdio/lib/vsprintf.c	/^static char *put_dec_full(char *buf, unsigned q)$/;"	f	file:
 put_dec_trunc	stdio/lib/vsprintf.c	/^static char *put_dec_trunc(char *buf, unsigned q)$/;"	f	file:
@@ -37942,6 +37956,8 @@ smp_rmb	stdio/include/system.h	321;"	d
 smp_wmb	stdio/include/system.h	315;"	d
 smp_wmb	stdio/include/system.h	322;"	d
 snprintf	stdio/lib/vsprintf.c	/^int snprintf(char * buf, size_t size, const char *fmt, ...)$/;"	f
+spi_init	bsp/spi/bsp_spi.c	/^void spi_init(ECSPI_Type *base)$/;"	f
+spich0_readwrite_byte	bsp/spi/bsp_spi.c	/^unsigned char spich0_readwrite_byte(ECSPI_Type *base, unsigned char txdata)$/;"	f
 sprintf	stdio/lib/vsprintf.c	/^int sprintf(char * buf, const char *fmt, ...)$/;"	f
 sscanf	stdio/lib/vsprintf.c	/^int sscanf(const char * buf, const char * fmt, ...)$/;"	f
 start_epit	bsp/epit/bsp_epit.c	/^void start_epit(int val)$/;"	f
