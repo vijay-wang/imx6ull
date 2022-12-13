@@ -12,7 +12,9 @@ void int_init(void)
 
 void system_irqtable_init(void)
 {
-	for (int i = 0; i < NUMBER_OF_INT_VECTORS; i++) {
+	int i = 0;
+
+	for (i = 0; i < NUMBER_OF_INT_VECTORS; i++) {
 		system_register_irqhandler((IRQn_Type)i, default_irqhandler, NULL);
 	}
 

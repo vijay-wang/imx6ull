@@ -37,7 +37,8 @@ $(TARGET).bin: $(OBJS)
 	$(ARM-OBJDUMP) -D -m arm $(TARGET).elf > $(TARGET).dis
 
 $(COBJS): obj/%.o: %.c
-	$(ARM-GCC) -fno-builtin -Wa,-mimplicit-it=thumb -Wall -std=$(GCC-STD) -nostdlib -c $(INCLUDE) -O2 $^ -o $@ 
+	$(ARM-GCC) -Wall -march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard -Wa,-mimplicit-it=thumb -std=$(GCC-STD) -nostdlib -fno-builtin -c $(INCLUDE) -O2 $^ -o $@ 
+
 $(SOBJS): obj/%.o: %.s
 	$(ARM-GCC) -fno-builtin -Wall -nostdlib -c $(INCLUDE) -O2 $^ -o $@
 

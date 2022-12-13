@@ -75,9 +75,10 @@ unsigned char ap3216c_readonebyte(unsigned char addr, unsigned char reg)
 void ap3216c_readdata(unsigned short *ir, unsigned short *ps, unsigned short *als)
 {
 	unsigned char buf[6];	
+	int i = 0;
 
 	/*循环读取所有传感器数据*/
-	for (int i = 0; i < 6; i++) {
+	for (i = 0; i < 6; i++) {
 		buf[i] = ap3216c_readonebyte(AP3216C_ADDR, AP3216_IRDATALOW + i);
 	}
 

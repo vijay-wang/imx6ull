@@ -38,9 +38,9 @@ enum ICM20608_ADDR {
 };
 
 struct gyro_accel_data {
-	short x;
-	short y;
-	short z;
+	int x;
+	int y;
+	int z;
 };
 
 void icm20608_init(void);
@@ -55,9 +55,9 @@ float icm20608_gyro_sensitivityget(void);
 
 unsigned short icm20608_accel_sensitivityget(void);
 
-void icmgyro_get_data(struct gyro_accel_data *data);
+void icmgyro_get_data(void);
 
-void icmaccel_get_data(struct gyro_accel_data *data);
+void icmaccel_get_data(void);
 
 void icm_getdata(struct gyro_accel_data *data, enum ICM20608_ADDR gyro_accel_addr);
 

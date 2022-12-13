@@ -33,10 +33,10 @@ void imx6ul_hardfpu_enable(void)
 
 int main(void)
 {
+	imx6ul_hardfpu_enable();
 	int_init();
 	imx6u_clkinit();
 	clk_enable();		/* 使能所有的时钟 			*/
-	imx6ul_hardfpu_enable();
 	delay_init();
 	led_init();		/* 初始化led 			*/
 	beep_init();		/* 初始化蜂鸣器 			*/
@@ -53,7 +53,7 @@ int main(void)
 	while(1)			/* 死循环 				*/
 	{	
 		display_fs_div_sens();
-		mdelay(2000);
+		mdelay(100);
 	}
 
 	return 0;

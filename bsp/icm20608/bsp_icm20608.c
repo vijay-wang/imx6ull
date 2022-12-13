@@ -29,13 +29,13 @@ void icm20608_init(void)
  	 *bit [5:3]: 110 驱动能力为R0/6
 	 *bit [0]: 1 高转换率
  	 */
-	IOMUXC_SetPinConfig(IOMUXC_UART2_RX_DATA_ECSPI3_SCLK, 0x10B1);
-	IOMUXC_SetPinConfig(IOMUXC_UART2_CTS_B_ECSPI3_MOSI, 0x10B1);
-	IOMUXC_SetPinConfig(IOMUXC_UART2_RTS_B_ECSPI3_MISO, 0x10B1);
+	IOMUXC_SetPinConfig(IOMUXC_UART2_RX_DATA_ECSPI3_SCLK, 0x10b1);
+	IOMUXC_SetPinConfig(IOMUXC_UART2_CTS_B_ECSPI3_MOSI, 0x10b1);
+	IOMUXC_SetPinConfig(IOMUXC_UART2_RTS_B_ECSPI3_MISO, 0x10b1);
 
 	/*设置片选,设置软件片选，不要设置硬件片选*/
 	IOMUXC_SetPinMux(IOMUXC_UART2_TX_DATA_GPIO1_IO20, 0);
-	IOMUXC_SetPinConfig(IOMUXC_UART2_TX_DATA_GPIO1_IO20, 0X10B0);
+	IOMUXC_SetPinConfig(IOMUXC_UART2_TX_DATA_GPIO1_IO20, 0x10b0);
 	cs_config.direction = GPIO_OUTPUT;
 	cs_config.output_logic = 0;
 	gpio_init(GPIO1, 20, &cs_config);
@@ -96,6 +96,8 @@ unsigned char icm20608_read_reg(unsigned char reg)
 
 void icm20608_read_len(unsigned char reg, unsigned char *buf, unsigned char len)
 {
+	int i = 0;
+
 	reg |= 0x80;
 	
    	ICM20608_CSN(0); /* 使能SPI传输 */
@@ -103,7 +105,7 @@ void icm20608_read_len(unsigned char reg, unsigned char *buf, unsigned char len)
 	spich0_readwrite_byte(ECSPI3, reg);
 
 	/*连续读取多个字节*/
-	for (int i = 0; i < len; i++) {
+	for (i = 0; i < len; i++) {
 		buf[i] = spich0_readwrite_byte(ECSPI3, 0xff);
 	}
 
@@ -164,45 +166,46 @@ unsigned short icm20608_accel_sensitivityget(void)
  * accel的寄存器地址ACCEL_XOUT_H*/
 void icm_getdata(struct gyro_accel_data *data, enum ICM20608_ADDR gyro_accel_addr)
 {
-	char buf[6] = { 0 };
+	unsigned char buf[6] = { 0 };
+	int i = 0;
 
-	for (int i = 0; i < 6; i++)
-		buf[i] = icm20608_read_reg(gyro_accel_addr + i);
+//	for (i = 0; i < 6; i++)
+//		buf[i] = icm20608_read_reg(gyro_accel_addr + i);
+
+	icm20608_read_len(gyro_accel_addr,buf , 6);
 
 	data->x = ((short)buf[0] << 8) | buf[1];
 	data->y = ((short)buf[2] << 8) | buf[3];
 	data->z = ((short)buf[4] << 8) | buf[5];
 }
 
-void icmgyro_get_data(struct gyro_accel_data *data)
+void icmgyro_get_data(void)
 {
-	icm_getdata(data, GYRO_XOUT_H);
+	struct gyro_accel_data gyro_data;		
+	float gyro_sens = icm20608_gyro_sensitivityget();
+
+	icm_getdata(&gyro_data, GYRO_XOUT_H);
+
+	printf("gyro_x: %d\r\n", ((int)(gyro_data.x) / gyro_sens) * 100);
+	printf("gyro_y: %d\r\n", ((int)(gyro_data.y) / gyro_sens) * 100);
+	printf("gyro_z: %d\r\n", ((int)(gyro_data.z) / gyro_sens) * 100);
 }
 
-void icmaccel_get_data(struct gyro_accel_data *data)
+void icmaccel_get_data(void)
 {
 	
-	icm_getdata(data, ACCEL_XOUT_H);
+	struct gyro_accel_data accel_data;		
+	unsigned short accel_sens = icm20608_accel_sensitivityget();
+
+	icm_getdata(&accel_data, ACCEL_XOUT_H);
+
+	printf("accel_x:%d\r\n", ((int)(accel_data.x) / accel_sens ) * 100);
+	printf("accel_y:%d\r\n", ((int)(accel_data.y) / accel_sens ) * 100);
+	printf("accel_z:%d\r\n", ((int)(accel_data.z) / accel_sens ) * 100);
 }
 
 void display_fs_div_sens(void)
 {
-	float gyro_sens = 0;
-	unsigned short accel_sens = 0;
-	struct gyro_accel_data gyro_data;		
-	struct gyro_accel_data accel_data;		
-
-	gyro_sens = icm20608_gyro_sensitivityget();
-	accel_sens = icm20608_accel_sensitivityget();
-
-	icmgyro_get_data(&gyro_data);
-	icmaccel_get_data(&accel_data);
-
-	printf("gyro_x:%f\r\n", gyro_data.x / gyro_sens);
-	printf("gyro_y:%f\r\n", gyro_data.y / gyro_sens);
-	printf("gyro_z:%f\r\n", gyro_data.z / gyro_sens);
-
-	printf("accel_x:%f\r\n", accel_data.x / accel_sens);
-	printf("accel_y:%f\r\n", accel_data.y / accel_sens);
-	printf("accel_z:%f\r\n", accel_data.z / accel_sens);
+	icmgyro_get_data();
+	icmaccel_get_data();
 }
